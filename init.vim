@@ -1,1 +1,0 @@
-/home/pritesh/.config/nvim/init.vim
