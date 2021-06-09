@@ -1,5 +1,4 @@
-# Colors (One Darker)
-# Note I am using alacritty-ligatures until ligatures make it upstream
+background_opacity: 0.85
 colors:
   # Default colors
   primary:

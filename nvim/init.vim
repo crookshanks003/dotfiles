@@ -34,7 +34,7 @@ nnoremap <leader>v :wincmd v<CR>
 nnoremap <leader>m :bnext<CR>
 nnoremap <leader>n :bprev<CR>
 vnoremap <leader>y "+y
-nnoremap  <leader>p "+p
+nnoremap  <leader>p "_dP
 nnoremap <leader>+ :res +5<CR>
 nnoremap <leader>- :res -5<CR>
 nnoremap + :vertical resize +5<CR>
