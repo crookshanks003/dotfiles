@@ -42,7 +42,7 @@ ZSH_THEME="awesomepanda"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -99,14 +99,14 @@ fi
 # Example aliases
 alias .zsh="nvim ~/.zshrc"
 alias .nvim="nvim ~/.config/nvim/init.vim"
-alias .tmux="nvim .tmux.conf"
+alias .tmux="nvim ~/.tmux.conf"
 alias .alac="nvim ~/.config/alacritty/alacritty.yml"
 alias cl="clear"
-alias xampp="sudo /opt/lampp/lampp start"
 function xampp(){
    "sudo /opt/lampp/lampp $1"
 }
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
+export BAT_THEME="gruvbox"
 
