@@ -65,7 +65,7 @@ Plug 'tpope/vim-commentary'
 call plug#end()
 
 colorscheme gruvbox
-
+hi Normal guibg=NONE ctermbg=NONE
 
 
 "Coc

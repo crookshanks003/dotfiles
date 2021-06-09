@@ -108,5 +108,5 @@ function xampp(){
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
-export BAT_THEME="gruvbox"
+export BAT_THEME="gruvbox-dark"
 
