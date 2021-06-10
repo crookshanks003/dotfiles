@@ -101,6 +101,7 @@ alias .zsh="nvim ~/.zshrc"
 alias .nvim="nvim ~/.config/nvim/init.vim"
 alias .tmux="nvim ~/.tmux.conf"
 alias .alac="nvim ~/.config/alacritty/alacritty.yml"
+alias .i3="nvim ~/.config/i3/config"
 alias cl="clear"
 function xampp(){
    "sudo /opt/lampp/lampp $1"
