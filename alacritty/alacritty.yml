@@ -1,8 +1,8 @@
-background_opacity: 0.9
+background_opacity: 0.95
 colors:
   # Default colors
   primary:
-    background: "#282828"
+    background: "#262626"
     foreground: "#ebdbb2"
 
   # Normal colors
@@ -36,23 +36,23 @@ colors:
 font:
   # The normal (roman) font face to use.
   normal:
-    family: cascadia code
+    family: "CaskaydiaCove Nerd Font"
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: cascadia code
+    family:  "CaskaydiaCove Nerd Font"
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: cascadia code
+    family:  "CaskaydiaCove Nerd Font"
     # Style can be specified to pick a specific face.
     style: Italic
 
-  size: 10.0
+  size: 11.0
 
   ligatures: true
 
@@ -69,6 +69,8 @@ window:
   #   # Number of lines the viewport will move for every line scrolled when
   #   # scrollback is enabled (history > 0).
   #   multiplier: 10
+  padding:
+      x: 3
 
 # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true

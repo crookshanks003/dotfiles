@@ -23,7 +23,6 @@ set notimeout
 set ttimeout
 set guifont=menlo:h14
 set nowrap
-set colorcolumn=80
 
 let mapleader = " "
 nnoremap <leader>h <C-w>h
@@ -162,6 +161,7 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_section_c_only_filename = 1
 let g:airline_section_c = '%t'
 let g:airline_section_z = ""
+
 
 
 "Fugitive
