@@ -1,7 +1,7 @@
 configuration {
     display-drun:                   "Apps";
     display-window:                 "Window";
-    modi:                           "window,drun,ssh,combi";
+    modi:                           "window,drun,ssh,combi,run";
     show-icons:true;
     /* fake-transparency: true; */
 }

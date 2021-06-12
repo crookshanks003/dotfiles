@@ -103,7 +103,7 @@ alias .alac="nvim ~/.config/alacritty/alacritty.yml"
 alias .i3="nvim ~/.config/i3/config"
 alias cl="clear"
 function xampp(){
-   "sudo /opt/lampp/lampp $1"
+   sudo "/opt/lampp/lampp" $1
 }
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export LC_ALL=en_IN.UTF-8
