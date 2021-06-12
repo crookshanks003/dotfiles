@@ -215,6 +215,7 @@ exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/pritesh/Downloa
 # finds out, if available)
 
 # set primary gruvbox colorscheme colors
+set $text-color #ebdbb2
 set $bg #282828
 set $light-red #fb4934
 set $red #cc241d
@@ -240,7 +241,7 @@ bar {
         #                    border  backgr. text
         focused_workspace    $light-green $light-green $darkgray
         inactive_workspace   $bg $bg $gray
-        urgent_workspace     $light-red $light-red $darkgray
+        urgent_workspace     $red $red $text-color
     }
 }
 
