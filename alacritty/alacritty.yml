@@ -1,4 +1,4 @@
-background_opacity: 0.95
+background_opacity: 0.96
 colors:
   # Default colors
   primary:
@@ -7,7 +7,7 @@ colors:
 
   # Normal colors
   normal:
-    black: "#3c3836"
+    black: "#252525"
     red: "#cc241d"
     green: "#98971a"
     yellow: "#d79921"
@@ -52,7 +52,7 @@ font:
     # Style can be specified to pick a specific face.
     style: Italic
 
-  size: 11.0
+  size: 11
 
   ligatures: true
 
@@ -70,7 +70,8 @@ window:
   #   # scrollback is enabled (history > 0).
   #   multiplier: 10
   padding:
-      x: 3
+      x: 6
+      y: 5
 
 # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true

@@ -207,7 +207,7 @@ bindsym $mod+Escape mode "$mode_system"
 
 for_window [class="^.*"] border pixel 1
 
-exec_always --no-startup-id exec compton --config ~/dotfiles/compton.conf
+exec --no-startup-id exec compton --config ~/dotfiles/compton.conf
 exec --no-startup-id exec sudo chmod a+rw /sys/class/backlight/nv_backlight/brightness
 exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/pritesh/Downloads/Wallpapers/sadkitty.jpg'
 
@@ -254,6 +254,6 @@ client.urgent           $red                $red               $text-color      
 
 hide_edge_borders smart
 
-gaps inner 18
+gaps inner 20
 gaps outer 0
 # smart_gaps on
