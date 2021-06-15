@@ -7,7 +7,7 @@ colors:
 
   # Normal colors
   normal:
-    black: "#252525"
+    black: "#1d2021"
     red: "#cc241d"
     green: "#98971a"
     yellow: "#d79921"
@@ -52,7 +52,7 @@ font:
     # Style can be specified to pick a specific face.
     style: Italic
 
-  size: 11
+  size: 10
 
   ligatures: true
 

@@ -68,20 +68,11 @@ row.activatable:active {
     outline-color: rgba(212, 190, 152, 0.08);
 }
 
-/**
- * Base States
- */
 .background {
     background-color: #ffffff;
     color: #d4be98;
 }
 
-/*
-   These wildcard seems unavoidable, need to investigate.
-   Wildcards are bad and troublesome, use them with care,
-   or better, just don't.
-   Everytime a wildcard is used a kitten dies, painfully.
-*/
 *:disabled {
     -gtk-icon-effect: dim;
 }

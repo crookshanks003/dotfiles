@@ -34,6 +34,7 @@ nnoremap <leader>m :bnext<CR>
 nnoremap <leader>n :bprev<CR>
 vnoremap <leader>y "+y
 nnoremap  <leader>p "_dP
+vnoremap <leader>c "+y
 nnoremap <leader>+ :res +5<CR>
 nnoremap <leader>- :res -5<CR>
 nnoremap + :vertical resize +5<CR>
@@ -41,7 +42,6 @@ nnoremap - :vertical resize -5<CR>
 nmap <C-m> gcc
 vmap <C-m> gc
 vnoremap <leader>d "_d
-
 
 
 "Plugins

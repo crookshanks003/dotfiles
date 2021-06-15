@@ -43,6 +43,9 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec bash ~/.config/i3/backlight.sh -inc 10
 bindsym XF86MonBrightnessDown exec bash ~/.config/i3/backlight.sh -dec 10
 
+bindsym --release $mod+x exec --no-startup-id import ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
+bindsym --release $mod+y exec --no-startup-id import -window root ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -150,7 +153,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-assign [class="discord"] $ws4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
