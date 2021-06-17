@@ -210,7 +210,6 @@ bindsym $mod+Escape mode "$mode_system"
 for_window [class="^.*"] border pixel 1
 
 exec --no-startup-id exec compton --config ~/dotfiles/compton.conf
-exec --no-startup-id exec sudo chmod a+rw /sys/class/backlight/nv_backlight/brightness
 exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/pritesh/Downloads/Wallpapers/sadkitty.jpg'
 
 # Start i3bar to display a workspace bar (plus the system information i3status

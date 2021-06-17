@@ -4,6 +4,7 @@ set noerrorbells
 set exrc
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set smarttab
 set expandtab
 set smartindent
 set ignorecase
@@ -23,8 +24,9 @@ set notimeout
 set ttimeout
 set guifont=menlo:h14
 set nowrap
+set cursorline
 
-let mapleader = " "
+" let mapleader = " "
 nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l
 nnoremap <leader>j <C-w>j
