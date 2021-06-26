@@ -1,25 +1,4 @@
 #!/usr/bin/perl
-# Copyright (C) 2014 Tony Crisci <tony@dubstepdish.com>
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-# Requires playerctl binary to be in your path (except cmus)
-# See: https://github.com/acrisci/playerctl
-
-# Set instance=NAME in the i3blocks configuration to specify a music player
-# (playerctl will attempt to connect to org.mpris.MediaPlayer2.[NAME] on your
-# DBus session).
 
 use Env qw(BLOCK_INSTANCE);
 
@@ -30,9 +9,9 @@ if ($BLOCK_INSTANCE) {
     $player_arg = "--player='$BLOCK_INSTANCE'";
 }
 
-if ($ENV{'BLOCK_BUTTON'} == 1) {
+if ($ENV{'BLOCK_BUTTON'} == 2) {
     system("playerctl $player_arg previous");
-} elsif ($ENV{'BLOCK_BUTTON'} == 2) {
+} elsif ($ENV{'BLOCK_BUTTON'} == 1) {
     system("playerctl $player_arg play-pause");
 } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
     system("playerctl $player_arg next");
