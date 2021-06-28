@@ -1,0 +1,197 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.defaultProfile.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "C_Cpp.updateChannel": "Insiders",
+    "code-runner.runInTerminal": true,
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "\"cascadia code\"",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Pylance",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "editor.fontLigatures": true,
+    "editor.accessibilitySupport": "off",
+    "editor.wordWrap": "on",
+    "editor.cursorStyle": "line",
+    "git.enableSmartCommit": true,
+    "editor.fontSize": 18,
+    "explorer.confirmDelete": false,
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "liveServer.settings.port": 2000,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "code-runner.executorMapByGlob": {
+        "pom.xml": "cd $dir && mvn clean package"
+    },
+    "emmet.includeLanguages": {
+        "django-html": "html",
+        "javascript": "javascriptreact"
+    },
+    "css.styleSheets": [
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+    ],
+    "git.confirmSync": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.linkedEditing": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "prettier.arrowParens": "avoid",
+    "prettier.tabWidth": 4,
+    "prettier.jsxBracketSameLine": true,
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true}",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "editor.formatOnSave": true,
+    "vim.camelCaseMotion.enable": true,
+    "terminal.integrated.fontFamily": "Cascadia Code Semilight",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": true,
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.menuBarVisibility": "toggle",
+    "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
+    "terminal.integrated.fontSize": 16,
+    "editor.cursorSurroundingLines": 8,
+    "editor.rulers": [80],
+    "vim.leader": " ",
+    "vim.sneak": false,
+    "vim.argumentObjectClosingDelimiters": [")", "]"],
+    "vim.statusBarColorControl": false,
+    "vim.mouseSelectionGoesIntoVisualMode": false,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<tab>"],
+            "commands": [":bnext"]
+        },
+        {
+            "before": ["<leader>", "<tab>"],
+            "commands": [":bprev"]
+        },
+        {
+            "before": ["]", "g"],
+            "commands": ["editor.action.marker.nextInFiles"]
+        },
+        {
+            "before": ["[", "g"],
+            "commands": ["editor.action.marker.prevInFiles"]
+        },
+        {
+            "before": ["g", "b"],
+            "commands": [
+                "editor.action.addSelectionToNextFindMatch",
+                "editor.action.addSelectionToNextFindMatch",
+                "extension.vim_escape"
+            ]
+        },
+        {
+            "before": ["g", "s"],
+            "commands": ["editor.action.rename"],
+            "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        },
+        {
+            "before": ["g", "l"],
+            "commands": [
+                "editor.action.selectHighlights",
+                "extension.vim_escape"
+            ]
+        },
+        {
+            "before": ["g", "o"],
+            "commands": ["git.openChange"]
+        },
+        {
+            "before": ["g", "r"],
+            "commands": ["editor.action.goToReferences"]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": ["workbench.view.explorer"]
+        },
+        {
+            "before": ["<leader>", "h"],
+            "commands": ["workbench.action.focusPreviousGroup"]
+        },
+        {
+            "before": ["<leader>", "l"],
+            "commands": ["workbench.action.focusNextGroup"]
+        },
+        {
+            "before": ["<leader>", "v"],
+            "commands": ["workbench.action.splitEditor"]
+        },
+        {
+            "before": ["<leader>", "+"],
+            "commands": ["workbench.action.increaseViewSize"]
+        },
+        {
+            "before": ["<leader>", "-"],
+            "commands": ["workbench.action.decreaseViewSize"]
+        },
+        {
+            "before": ["<leader>", "r"],
+            "commands": ["fileutils.renameFile"]
+        },
+        {
+            "before": ["<leader>", "d"],
+            "commands": ["fileutils.removeFile"]
+        },
+        {
+            "before": ["<leader>", "m"],
+            "commands": ["fileutils.moveFile"]
+        },
+        {
+            "before": ["<leader>", "n"],
+            "commands": ["fileutils.newFileAtRoot"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "d"],
+            "after": ["\"", "_", "d"]
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#282828",
+        "statusBar.debuggingBackground": "#282828"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 4
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 4
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "files.exclude": {
+        "**/node_modules": true,
+        "package-lock.json": true
+    },
+    "window.title": "${rootName}",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "php.validate.enable": true,
+    "php.validate.run": "onType",
+    "workbench.startupEditor": "none",
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe"
+}
