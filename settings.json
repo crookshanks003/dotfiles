@@ -14,7 +14,7 @@
     "editor.wordWrap": "on",
     "editor.cursorStyle": "line",
     "git.enableSmartCommit": true,
-    "editor.fontSize": 18,
+    "editor.fontSize": 20,
     "explorer.confirmDelete": false,
     "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
     "liveServer.settings.port": 2000,
@@ -104,10 +104,6 @@
             "commands": ["editor.action.goToReferences"]
         },
         {
-            "before": ["<leader>", "b"],
-            "commands": ["workbench.view.explorer"]
-        },
-        {
             "before": ["<leader>", "h"],
             "commands": ["workbench.action.focusPreviousGroup"]
         },
@@ -140,8 +136,24 @@
             "commands": ["fileutils.moveFile"]
         },
         {
-            "before": ["<leader>", "n"],
-            "commands": ["fileutils.newFileAtRoot"]
+            "before": ["u"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<C-r>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo",
+                    "args": []
+                }
+            ]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -193,5 +205,5 @@
     "php.validate.enable": true,
     "php.validate.run": "onType",
     "workbench.startupEditor": "none",
-    "php.validate.executablePath": "C:\\xampp\\php\\php.exe"
+    "editor.minimap.enabled": false
 }

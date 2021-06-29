@@ -26,7 +26,7 @@ set guifont=menlo:h14
 set nowrap
 set cursorline
 
-" let mapleader = " "
+let mapleader = " "
 nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l
 nnoremap <leader>j <C-w>j
