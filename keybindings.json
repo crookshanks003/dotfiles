@@ -194,10 +194,6 @@
         "command": "-workbench.action.files.newUntitledFile"
     },
     {
-        "key": "ctrl+n",
-        "command": "fileutils.newFile"
-    },
-    {
         "key": "ctrl+k",
         "command": "-extension.vim_ctrl+k",
         "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
@@ -214,5 +210,38 @@
     {
         "key": "ctrl+r",
         "command": "extension.vim_ctrl+r"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.files.openFolder"
+    },
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "-workbench.action.files.openFolder"
+    },
+    {
+        "key": "alt+d",
+        "command": "fileutils.duplicateFile"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "fileutils.newFileAtRoot"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "-editor.action.toggleTabFocusMode"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "editor.emmet.action.matchTag"
     }
 ]
