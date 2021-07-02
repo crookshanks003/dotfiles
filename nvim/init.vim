@@ -25,6 +25,7 @@ set ttimeout
 set guifont=menlo:h14
 set nowrap
 set cursorline
+set colorcolumn=100
 
 let mapleader = " "
 nnoremap <leader>h <C-w>h

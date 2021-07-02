@@ -4,7 +4,7 @@
     "C_Cpp.updateChannel": "Insiders",
     "code-runner.runInTerminal": true,
     "editor.lineNumbers": "relative",
-    "editor.fontFamily": "\"cascadia code\"",
+    "editor.fontFamily": "\"JetBrainsMono Nerd Font Mono\"",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
