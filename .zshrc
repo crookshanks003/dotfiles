@@ -109,3 +109,5 @@ export BAT_THEME="ansi-dark"
 function cpp(){
     touch $1.cpp
 }
+
+alias luamake=/home/pritesh/.config/nvim/lua-language-server/3rd/luamake/luamake
