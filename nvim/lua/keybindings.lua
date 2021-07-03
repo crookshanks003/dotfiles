@@ -31,3 +31,8 @@ map('n', '-', ':vertical resize -5<CR>')
 --nmap <C-m> gcc
 --vmap <C-m> gc
 map('v', '<leader>d', '"_d')
+
+
+--NvimTree
+map('n', '<C-t>', ':NvimTreeToggle<CR>')
+map('n', '<C-f>', ':NvimTreeFindFile')

@@ -23,10 +23,25 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'
     use {
         "kyazdani42/nvim-tree.lua",
-        -- cmd = "NvimTreeToggle",
         config = function()
-            require("nvimtree").config()
+            require("nvimtree")
         end
+    }
+
+    --LuaLine
+    use {
+        'hoob3rt/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        config = function()
+            require('lua-line')
+        end
+    }
+
+
+    --telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
   
   end)

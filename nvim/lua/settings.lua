@@ -1,6 +1,6 @@
 --colorscheme--
 vim.cmd 'colorscheme gruvbox'
-vim.cmd 'hi Normal guibg=NONE ctermbg=NONE'
+vim.cmd 'au VimEnter * hi Normal guibg=NONE ctermbg=NONE'
 
 
 --helper--
@@ -30,7 +30,6 @@ opt('o', 'errorbells', false)
 opt('o', 'ignorecase', true)
 opt('o', 'smartcase', true)
 opt('o', 'backup', false)
-opt('o', 'undodir', './undodir')
 opt('o', 'undofile', true)
 opt('o', 'scrolloff', 8)
 opt('o', 'sidescrolloff', 4 )
