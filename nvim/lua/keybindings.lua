@@ -35,4 +35,5 @@ map('v', '<leader>d', '"_d')
 
 --NvimTree
 map('n', '<C-t>', ':NvimTreeToggle<CR>')
-map('n', '<C-f>', ':NvimTreeFindFile')
+map('n', '<C-f>', ':NvimTreeFindFile<CR>')
+

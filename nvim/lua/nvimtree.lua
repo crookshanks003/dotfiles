@@ -49,6 +49,8 @@ vim.g.nvim_tree_icons = {
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 vim.cmd "highlight NvimTreeGitDirty guifg=#d79921"
+vim.cmd "highlight NvimTreeFolderName guifg=#ebdbb2 gui=bold"
+vim.cmd "highlight NvimTreeOpenedFolderName guifg=#ebdbb2 gui=bold"
 
 vim.g.nvim_tree_bindings = {
     { key = "h",                            cb = tree_cb("split")},

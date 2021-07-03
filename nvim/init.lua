@@ -1,4 +1,5 @@
 require('plugins')
 require('settings')
 require('keybindings')
-
+require('lsp_config')
+require('tree_sitter')
