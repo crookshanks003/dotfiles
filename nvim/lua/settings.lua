@@ -36,3 +36,10 @@ opt('o', 'sidescrolloff', 4 )
 opt('o', 'showmode', false)
 opt('o', 'colorcolumn', '100')
 opt('o', 'cursorline', true)
+
+
+--autocmds
+-- remove trailing whitespaces
+vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
+-- remove trailing newline
+vim.cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])

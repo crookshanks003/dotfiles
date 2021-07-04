@@ -97,11 +97,12 @@ fi
 #
 # Example aliases
 alias .zsh="nvim ~/.zshrc"
-alias .nvim="nvim ~/.config/nvim/init.vim"
+alias .nvim="nvim ~/.config/nvim/init.lua"
 alias .tmux="nvim ~/.tmux.conf"
 alias .alac="nvim ~/.config/alacritty/alacritty.yml"
 alias .i3="nvim ~/.config/i3/config"
 alias cl="clear"
+alias vim="nvim"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8

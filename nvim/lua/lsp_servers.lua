@@ -1,8 +1,12 @@
+local nvim_lsp = require'lspconfig'
+
+
+--lua-language-server
 local data = vim.fn.stdpath('data')
 local lsp_lua = data.."/lspinstall/lua/sumneko-lua/extension/server"
 local lsp_binary = lsp_lua.."/bin/Linux/lua-language-server"
 
-require'lspconfig'.sumneko_lua.setup {
+nvim_lsp.sumneko_lua.setup {
     cmd = {lsp_binary, "-E", lsp_lua .. "/main.lua"},
     on_attach= require'completion'.on_attach,
     settings = {
@@ -24,5 +28,3 @@ require'lspconfig'.sumneko_lua.setup {
         }
     }
 }
-
-

@@ -17,6 +17,10 @@ return require('packer').startup(function(use)
     use "gruvbox-community/gruvbox"
 
 
+    --Comment
+    use "tpope/vim-commentary"
+
+
     --lsp
     use "neovim/nvim-lspconfig"
     use  "nvim-lua/completion-nvim"
@@ -52,8 +56,9 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'},
-        {'nvim-lua/plenary.nvim'}
-    }}
+        {'nvim-lua/plenary.nvim'}},
+        config = require('telescope')
+    }
 
 
     --treesitter
