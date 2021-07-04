@@ -8,7 +8,7 @@
   --execute 'packadd packer.nvim'
 --end
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -19,12 +19,7 @@ return require('packer').startup(function()
 
     --lsp
     use "neovim/nvim-lspconfig"
-    use {
-        "nvim-lua/completion-nvim",
-        config = function()
-            require("completion")
-        end
-    }
+    use  "nvim-lua/completion-nvim"
     use {
         "kabouzeid/nvim-lspinstall",
         config = function()

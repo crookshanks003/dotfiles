@@ -4,6 +4,7 @@ local lsp_binary = lsp_lua.."/bin/Linux/lua-language-server"
 
 require'lspconfig'.sumneko_lua.setup {
     cmd = {lsp_binary, "-E", lsp_lua .. "/main.lua"},
+    on_attach= require'completion'.on_attach,
     settings = {
         Lua = {
             runtime = {
