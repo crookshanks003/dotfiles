@@ -1,14 +1,15 @@
 local nvim_lsp = require'lspconfig'
-
-
---lua-language-server
+local lsp_config = require"lsp_config"
 local data = vim.fn.stdpath('data')
-local lsp_lua = data.."/lspinstall/lua/sumneko-lua/extension/server"
-local lsp_binary = lsp_lua.."/bin/Linux/lua-language-server"
+
+
+--lua
+local lua_dir = data.."/language-servers/sumneko-lua/"
+local lua_binary = lua_dir.."/bin/Linux/lua-language-server"
 
 nvim_lsp.sumneko_lua.setup {
-    cmd = {lsp_binary, "-E", lsp_lua .. "/main.lua"},
-    on_attach= require'completion'.on_attach,
+    cmd = {lua_binary, "-E", lua_dir .. "/main.lua"},
+    on_attach= lsp_config.on_attach_common,
     settings = {
         Lua = {
             runtime = {
@@ -27,4 +28,22 @@ nvim_lsp.sumneko_lua.setup {
             }
         }
     }
+}
+
+
+--tsserver
+nvim_lsp.tsserver.setup{
+    on_attach = lsp_config.on_attach_common
+}
+
+
+--pyright
+nvim_lsp.pyright.setup{
+    on_attach = lsp_config.on_attach_common
+}
+
+
+--cpp
+nvim_lsp.clangd.setup{
+    on_attach = lsp_config.on_attach_common
 }

@@ -205,5 +205,7 @@
     "php.validate.enable": true,
     "php.validate.run": "onType",
     "workbench.startupEditor": "none",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "Lua.telemetry.enable": false,
+    "editor.semanticHighlighting.enabled": true
 }

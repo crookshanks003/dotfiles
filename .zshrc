@@ -82,7 +82,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#928374'
 # export LANG=en_US.UTF-8
 
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='vi'
 else
   export EDITOR='nvim'
 fi
@@ -107,8 +107,3 @@ alias vim="nvim"
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
 export BAT_THEME="ansi-dark"
-function cpp(){
-    touch $1.cpp
-}
-
-alias luamake=/home/pritesh/.config/nvim/lua-language-server/3rd/luamake/luamake

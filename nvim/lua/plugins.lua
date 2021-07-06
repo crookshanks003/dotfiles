@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
 
 
     --Comment
-    use "tpope/vim-commentary"
+    -- use "tpope/vim-commentary"
 
 
     --lsp
@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
 
 
     --nvimtree
-    use 'kyazdani42/nvim-web-devicons'
+    -- use 'kyazdani42/nvim-web-devicon
     use {
         "kyazdani42/nvim-tree.lua",
         config = function()
@@ -57,8 +57,9 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'},
         {'nvim-lua/plenary.nvim'}},
-        config = require('telescope')
+        config = require('telescope_config').config()
     }
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 
     --treesitter
