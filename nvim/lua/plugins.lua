@@ -23,8 +23,13 @@ return require('packer').startup(function(use)
 
     --lsp
     use "neovim/nvim-lspconfig" --4
-    use  "nvim-lua/completion-nvim" --5
-
+    -- use  "nvim-lua/completion-nvim" --5
+    use {
+        "hrsh7th/nvim-compe",
+        config = function()
+            require("nvim_compe")
+        end
+    }
 
     --nvimtree
     use {

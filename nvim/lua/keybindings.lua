@@ -42,15 +42,52 @@ M.default_bindings = function()
     map('n', '<C-f>', ':NvimTreeFindFile<CR>')
 
 
-    --Tab Completion
-    map('i', "<Tab>", 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
-    map('i', "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
-
     --Telescope
     map('n', '<leader>fd', "<cmd>Telescope find_files cwd=~/dotfiles prompt_title=Dotfiles<CR>")
     map('n', '<C-p>', "<cmd>Telescope git_files<CR>")
     map('n', '<M-S-p>', "<cmd>Telescope find_files<CR>")
     map('n', '<C-b>', "<cmd>Telescope buffers<CR>")
+
+
+    --nvim-compe
+    local t = function(str)
+        return vim.api.nvim_replace_termcodes(str, true, true, true)
+    end
+
+    local check_back_space = function()
+        local col = vim.fn.col('.') - 1
+        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+    end
+    _G.tab_complete = function()
+        if vim.fn.pumvisible() == 1 then
+            return t "<C-n>"
+        elseif vim.fn['vsnip#available'](1) == 1 then
+            return t "<Plug>(vsnip-expand-or-jump)"
+        elseif check_back_space() then
+            return t "<Tab>"
+        else
+            return vim.fn['compe#complete']()
+        end
+    end
+    _G.s_tab_complete = function()
+        if vim.fn.pumvisible() == 1 then
+            return t "<C-p>"
+        elseif vim.fn['vsnip#jumpable'](-1) == 1 then
+            return t "<Plug>(vsnip-jump-prev)"
+        else
+            -- If <S-Tab> is not working in your terminal, change it to <C-h>
+            return t "<S-Tab>"
+        end
+    end
+
+    map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+    map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+    map('i', '<CR>', "compe#confirm('<CR>')", {silent=true, expr=true})
+    map('i', '<C-Space>', "compe#complete()", {silent=true, expr=true})
+    map('i', '<C-e>', "compe#close('<C-e>')", {silent=true, expr=true})
+    map('i', '<C-f>', "compe#scroll({'delta': +4})", {silent=true, expr=true})
+    map('i', '<C-d>', "compe#scroll({'delta': -4})", {silent=true, expr=true})
+
 end
 
 
@@ -61,7 +98,7 @@ M.lsp_bindings = function()
     map('n','K','<cmd>lua vim.lsp.buf.hover()<CR>')
     map('n','gr','<cmd>lua vim.lsp.buf.references()<CR>')
     map('n','gi','<cmd>lua vim.lsp.buf.implementation()<CR>')
-    map('n','<F5>','<cmd>lua vim.lsp.buf.code_action()<CR>')
+    map('n','<M-i>','<cmd>lua vim.lsp.buf.code_action()<CR>')
     map('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>')
     map('n','<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>')
     map('n','g]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')

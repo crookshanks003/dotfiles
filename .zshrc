@@ -97,7 +97,7 @@ fi
 #
 # Example aliases
 alias .zsh="nvim ~/.zshrc"
-alias .nvim="nvim ~/.config/nvim/init.lua"
+alias .nvim="cd ~/.config/nvim && nvim init.lua"
 alias .tmux="nvim ~/.tmux.conf"
 alias .alac="nvim ~/.config/alacritty/alacritty.yml"
 alias .i3="nvim ~/.config/i3/config"

@@ -18,9 +18,9 @@ colors:
 
   # Bright colors
   bright:
-    black: "#1d2021"
+    black: "#504945"
     red: "#fb4934"
-    green: "#b8b286"
+    green: "#b8bb26"
     yellow: "#fabd2f"
     blue: "#83a598"
     magenta: "#d3869b"
@@ -29,8 +29,8 @@ colors:
 
 
   # Change cursor colors
-  cursor:
-    cursor: "#ebdbb2"
+  #  cursor:
+  #    cursor: "#ebdbb2"
 
 
 font:
@@ -44,7 +44,7 @@ font:
   bold:
     family:  "JetBrainsMono Nerd Font Mono"
     # Style can be specified to pick a specific face.
-    style: Bold 
+    style: Bold
 
   # The italic font face
   italic:
@@ -74,7 +74,7 @@ window:
       y: 5
 
 # Allow terminal applications to change Alacritty's window title.
-  dynamic_title: true
+#  dynamic_title: true
 
   # # If `true`, bold text is drawn using the bright color variants.
   # draw_bold_text_with_bright_colors: true
@@ -83,6 +83,9 @@ window:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: true
   live_config_reload: true
+
+
+
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }

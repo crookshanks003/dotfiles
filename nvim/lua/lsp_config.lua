@@ -62,8 +62,8 @@ end
 --lsp_servers on_attach
 M.on_attach_common = function()
     print("LSP Started")
-    require"completion".on_attach()
     require("keybindings").lsp_bindings()
 end
+
 
 return M

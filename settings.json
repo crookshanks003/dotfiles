@@ -207,5 +207,6 @@
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
     "Lua.telemetry.enable": false,
-    "editor.semanticHighlighting.enabled": true
+    "editor.semanticHighlighting.enabled": true,
+    "breadcrumbs.enabled": false
 }
