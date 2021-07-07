@@ -10,32 +10,25 @@
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim' --1
 
 
     --Colorschemes
-    use "gruvbox-community/gruvbox"
+    use "gruvbox-community/gruvbox" --2
 
 
     --Comment
-    -- use "tpope/vim-commentary"
+    use "tpope/vim-commentary" --3
 
 
     --lsp
-    use "neovim/nvim-lspconfig"
-    use  "nvim-lua/completion-nvim"
-    use {
-        "kabouzeid/nvim-lspinstall",
-        config = function()
-            require"lspinstall".setup()
-        end
-    }
+    use "neovim/nvim-lspconfig" --4
+    use  "nvim-lua/completion-nvim" --5
 
 
     --nvimtree
-    -- use 'kyazdani42/nvim-web-devicon
     use {
-        "kyazdani42/nvim-tree.lua",
+        "kyazdani42/nvim-tree.lua", --6
         config = function()
             require("nvimtree")
         end
@@ -44,7 +37,7 @@ return require('packer').startup(function(use)
 
     --LuaLine
     use {
-        'hoob3rt/lualine.nvim',
+        'hoob3rt/lualine.nvim', --7
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = function()
             require('lua_line')
@@ -54,19 +47,24 @@ return require('packer').startup(function(use)
 
     --telescope
     use {
-        'nvim-telescope/telescope.nvim',
+        'nvim-telescope/telescope.nvim', --8
         requires = {{'nvim-lua/popup.nvim'},
         {'nvim-lua/plenary.nvim'}},
         config = require('telescope_config').config()
     }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } --9
 
 
     --treesitter
      use {
-        'nvim-treesitter/nvim-treesitter',
+        'nvim-treesitter/nvim-treesitter', --10
         run = ':TSUpdate',
     }
-    use "nvim-treesitter/playground"
+    use "nvim-treesitter/playground" --11
 
-  end)
+
+    --emmet
+    use"mattn/emmet-vim" --12
+
+
+end)

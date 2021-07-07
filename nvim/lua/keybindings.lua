@@ -14,10 +14,10 @@ M.default_bindings = function()
 
 
     --defaults--
-    map('n','<tab>', ':bnext <CR>')
-    map('n','<leader><tab>', ':bprev <CR>')
-    map('n', '<leader>m', ':cn<CR>')
-    map('n', '<leader>n', ':cp<CR>')
+    map('n','<leader>m', ':bnext <CR>')
+    map('n','<leader>n', ':bprev <CR>')
+    map('n', '<M-m>', ':cn<CR>')
+    map('n', '<M-n>', ':cp<CR>')
     map('n', '<leader>h', '<C-w>h')
     map('n', '<leader>l', '<C-w>l')
     map('n', '<leader>j', '<C-w>j')
@@ -30,12 +30,11 @@ M.default_bindings = function()
     map('n', '<leader>-', ':res -5<CR>')
     map('n', '+', ':vertical resize +5<CR>')
     map('n', '-', ':vertical resize -5<CR>')
-    map("x", "<M-k>", ":move '<-2<CR>gv-gv")
     map("x", "<M-j>", ":move '>+1<CR>gv-gv")
+    map("x", "<M-k>", ":move '<-2<CR>gv-gv")
     map("n", "H", "^")
     map("n", "L", "$")
     map('v', '<leader>d', '"_d')
-
 
 
     --NvimTree
@@ -46,7 +45,6 @@ M.default_bindings = function()
     --Tab Completion
     map('i', "<Tab>", 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
     map('i', "<S-Tab>", 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
-
 
     --Telescope
     map('n', '<leader>fd', "<cmd>Telescope find_files cwd=~/dotfiles prompt_title=Dotfiles<CR>")

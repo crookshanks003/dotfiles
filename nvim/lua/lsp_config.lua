@@ -3,19 +3,19 @@ local M = {}
 M.config = function()
     vim.fn.sign_define(
     "LspDiagnosticsSignError",
-    {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
+    {texthl = "LspDiagnosticsSignError", text = ">>", numhl = "LspDiagnosticsSignError"}
     )
     vim.fn.sign_define(
     "LspDiagnosticsSignWarning",
-    {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"}
+    {texthl = "LspDiagnosticsSignWarning", text = ">>", numhl = "LspDiagnosticsSignWarning"}
     )
     vim.fn.sign_define(
     "LspDiagnosticsSignHint",
-    {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"}
+    {texthl = "LspDiagnosticsSignHint", text = ">>", numhl = "LspDiagnosticsSignHint"}
     )
     vim.fn.sign_define(
     "LspDiagnosticsSignInformation",
-    {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
+    {texthl = "LspDiagnosticsSignInformation", text = ">>", numhl = "LspDiagnosticsSignInformation"}
     )
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

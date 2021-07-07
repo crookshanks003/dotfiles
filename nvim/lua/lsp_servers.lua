@@ -47,3 +47,27 @@ nvim_lsp.pyright.setup{
 nvim_lsp.clangd.setup{
     on_attach = lsp_config.on_attach_common
 }
+
+
+--html
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup{
+    init_options = {
+      configurationSection = { "html", "css", "javascript" },
+      embeddedLanguages = {
+        css = true,
+        javascript = true
+      }
+    },
+    capabilities = capabilities,
+    on_attach = lsp_config.on_attach_common
+}
+
+
+--css
+require'lspconfig'.cssls.setup{
+     capabilities = capabilities,
+     on_attach = lsp_config.on_attach_common
+}
