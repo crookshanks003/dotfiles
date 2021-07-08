@@ -72,4 +72,13 @@ return require('packer').startup(function(use)
     use"mattn/emmet-vim" --12
 
 
+    --bufferline -might_remove_in_future
+    use {
+        "akinsho/nvim-bufferline.lua",
+        config = function()
+            require("buffer_line")
+        end
+    }
+
+
 end)
