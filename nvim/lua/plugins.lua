@@ -1,12 +1,12 @@
---local execute = vim.api.nvim_command
---local fn = vim.fn
+local execute = vim.api.nvim_command
+local fn = vim.fn
 
---local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
---if fn.empty(fn.glob(install_path)) > 0 then
-  --fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  --execute 'packadd packer.nvim'
---end
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+  execute 'packadd packer.nvim'
+end
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -28,14 +28,6 @@ return require('packer').startup(function(use)
         "hrsh7th/nvim-compe",
         config = function()
             require("nvim_compe")
-        end
-    }
-
-    --nvimtree
-    use {
-        "kyazdani42/nvim-tree.lua", --6
-        config = function()
-            require("nvimtree")
         end
     }
 
@@ -71,14 +63,11 @@ return require('packer').startup(function(use)
     --emmet
     use"mattn/emmet-vim" --12
 
-
-    --bufferline -might_remove_in_future
-    -- use {
-    --     "akinsho/nvim-bufferline.lua",
-    --     config = function()
-    --         require("buffer_line")
-    --     end
-    -- }
-
+    use {
+        "kyazdani42/nvim-tree.lua", --6
+        config = function()
+            require("nvim_tree")
+        end
+    }
 
 end)

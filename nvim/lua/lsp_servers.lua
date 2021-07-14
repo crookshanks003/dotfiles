@@ -34,7 +34,9 @@ nvim_lsp.sumneko_lua.setup {
 --tsserver
 nvim_lsp.tsserver.setup{
     on_attach = lsp_config.on_attach_common,
-    settings = {documentFormatting = false}
+    init_options = {
+        formatting = false,
+    }
 }
 
 
@@ -46,7 +48,10 @@ nvim_lsp.pyright.setup{
 
 --cpp
 nvim_lsp.clangd.setup{
-    on_attach = lsp_config.on_attach_common
+    on_attach = lsp_config.on_attach_common,
+    init_options = {
+        formatting = false,
+    }
 }
 
 
