@@ -73,12 +73,12 @@ return require('packer').startup(function(use)
 
 
     --bufferline -might_remove_in_future
-    use {
-        "akinsho/nvim-bufferline.lua",
-        config = function()
-            require("buffer_line")
-        end
-    }
+    -- use {
+    --     "akinsho/nvim-bufferline.lua",
+    --     config = function()
+    --         require("buffer_line")
+    --     end
+    -- }
 
 
 end)

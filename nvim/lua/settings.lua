@@ -38,6 +38,7 @@ opt('o', 'colorcolumn', '100')
 opt('o', 'cursorline', true)
 opt('o', 'termguicolors', true)
 
+vim.g.dashboard_disable_at_vimenter = 0
 
 --autocmds
 -- remove trailing whitespaces

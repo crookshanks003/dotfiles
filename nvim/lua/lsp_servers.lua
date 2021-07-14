@@ -33,7 +33,8 @@ nvim_lsp.sumneko_lua.setup {
 
 --tsserver
 nvim_lsp.tsserver.setup{
-    on_attach = lsp_config.on_attach_common
+    on_attach = lsp_config.on_attach_common,
+    settings = {documentFormatting = false}
 }
 
 

@@ -14,10 +14,8 @@ M.default_bindings = function()
 
 
     --defaults--
-    map('n','<leader>m', ':bnext <CR>')
-    map('n','<leader>n', ':bprev <CR>')
-    map('n', '<M-m>', ':cn<CR>')
-    map('n', '<M-n>', ':cp<CR>')
+    map('n', '<leader>m', ':bn<CR>')
+    map('n', '<leader>n', ':bp<CR>')
     map('n', '<leader>h', '<C-w>h')
     map('n', '<leader>l', '<C-w>l')
     map('n', '<leader>j', '<C-w>j')
@@ -35,6 +33,7 @@ M.default_bindings = function()
     map("n", "H", "^")
     map("n", "L", "$")
     map('v', '<leader>d', '"_d')
+    map('n', '<leader>b', ":buffers<CR> :buffer ")
 
 
     --NvimTree
@@ -47,6 +46,7 @@ M.default_bindings = function()
     map('n', '<C-p>', "<cmd>Telescope git_files<CR>")
     map('n', '<M-S-p>', "<cmd>Telescope find_files<CR>")
     map('n', '<C-b>', "<cmd>Telescope buffers<CR>")
+    map('n', '<C-h>', "<cmd>Telescope oldfiles<CR>")
 
 
     --nvim-compe
@@ -88,6 +88,14 @@ M.default_bindings = function()
     map('i', '<C-f>', "compe#scroll({'delta': +4})", {silent=true, expr=true})
     map('i', '<C-d>', "compe#scroll({'delta': -4})", {silent=true, expr=true})
 
+
+    --QuickfixList
+    --TODO: Add a toggle option
+    map('n','<C-j>', ':cn <CR>')
+    map('n','<C-k>', ':cp <CR>')
+    map('n','<M-j>', ':lnext <CR>')
+    map('n','<M-k>', ':lprev <CR>')
+
 end
 
 
@@ -101,9 +109,9 @@ M.lsp_bindings = function()
     map('n','<M-i>','<cmd>lua vim.lsp.buf.code_action()<CR>')
     map('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>')
     map('n','<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-    map('n','g]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-    map('n','g[', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-    -- map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()')
+    map('n','gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+    map('n','gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+    map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
 end
 
 return M
