@@ -63,6 +63,8 @@ return require('packer').startup(function(use)
     --emmet
     use"mattn/emmet-vim" --12
 
+
+    --nvim_tree
     use {
         "kyazdani42/nvim-tree.lua", --6
         config = function()
