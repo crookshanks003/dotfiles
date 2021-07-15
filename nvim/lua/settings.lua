@@ -1,8 +1,8 @@
 --helper--
 local scopes = {o = vim.o, b = vim.bo, w = vim.wo, g = vim.g}
 local opt = function (scope, key, value)
-  scopes[scope][key] = value
-  if scope ~= 'o' then scopes['o'][key] = value end
+	scopes[scope][key] = value
+	if scope ~= 'o' then scopes['o'][key] = value end
 end
 
 local indent=4
@@ -17,7 +17,7 @@ vim.cmd "set shortmess+=c"
 opt('o', 'tabstop', indent)
 opt('o', 'softtabstop', indent)
 opt('o', 'shiftwidth', indent)
-opt('o', 'expandtab', true)
+opt('o', 'expandtab', false)
 opt('o', 'smartindent', true)
 opt('o', 'swapfile', false)
 opt('o', 'number', true)

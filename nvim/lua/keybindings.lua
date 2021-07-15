@@ -113,6 +113,9 @@ M.default_bindings = function()
     --terminal
     map("t", "<Esc>", "<C-\\><C-n>")
 
+    --formatter
+    map('n','<leader>=', '<cmd>Format<CR>')
+
 end
 
 
@@ -125,7 +128,6 @@ M.lsp_bindings = function()
     map('n','gi','<cmd>lua vim.lsp.buf.implementation()<CR>')
     map('n','<M-i>','<cmd>lua vim.lsp.buf.code_action()<CR>')
     map('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>')
-    map('n','<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>')
     map('n','gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
     map('n','gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
     map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')

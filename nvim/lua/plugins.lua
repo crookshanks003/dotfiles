@@ -1,29 +1,28 @@
-local execute = vim.api.nvim_command
-local fn = vim.fn
+-- local execute = vim.api.nvim_command
+-- local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+-- local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  execute 'packadd packer.nvim'
-end
+-- if fn.empty(fn.glob(install_path)) > 0 then
+--   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+--   execute 'packadd packer.nvim'
+-- end
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim' --1
+    use 'wbthomason/packer.nvim'
 
 
     --Colorschemes
-    use "gruvbox-community/gruvbox" --2
+    use "gruvbox-community/gruvbox"
 
 
     --Comment
-    use "tpope/vim-commentary" --3
+    use "tpope/vim-commentary"
 
 
     --lsp
-    use "neovim/nvim-lspconfig" --4
-    -- use  "nvim-lua/completion-nvim" --5
+    use "neovim/nvim-lspconfig"
     use {
         "hrsh7th/nvim-compe",
         config = function()
@@ -34,7 +33,7 @@ return require('packer').startup(function(use)
 
     --LuaLine
     use {
-        'hoob3rt/lualine.nvim', --7
+        'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = function()
             require('lua_line')
@@ -44,29 +43,29 @@ return require('packer').startup(function(use)
 
     --telescope
     use {
-        'nvim-telescope/telescope.nvim', --8
+        'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'},
         {'nvim-lua/plenary.nvim'}},
         config = require('telescope_config').config()
     }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } --9
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 
     --treesitter
      use {
-        'nvim-treesitter/nvim-treesitter', --10
+        'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
     }
-    use "nvim-treesitter/playground" --11
+    use "nvim-treesitter/playground"
 
 
     --emmet
-    use"mattn/emmet-vim" --12
+    use"mattn/emmet-vim"
 
 
     --nvim_tree
     use {
-        "kyazdani42/nvim-tree.lua", --6
+        "kyazdani42/nvim-tree.lua",
         config = function()
             require("nvim_tree")
         end
