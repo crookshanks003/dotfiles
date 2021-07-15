@@ -72,4 +72,22 @@ return require('packer').startup(function(use)
         end
     }
 
+
+    --harpoon
+    use {
+        "ThePrimeagen/harpoon",
+        config = function()
+            require("harpoon").setup()
+        end
+    }
+
+
+    --formatter
+    use {
+        "mhartington/formatter.nvim",
+        config = function()
+            require("formatter_nvim")
+        end
+    }
+
 end)

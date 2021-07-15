@@ -38,7 +38,6 @@ M.default_bindings = function()
 
     --NvimTree
     map('n', '<C-t>', ':NvimTreeToggle<CR>')
-    map('n', '<C-f>', ':NvimTreeFindFile<CR>')
 
 
     --Telescope
@@ -85,8 +84,6 @@ M.default_bindings = function()
     map('i', '<CR>', "compe#confirm('<CR>')", {silent=true, expr=true})
     map('i', '<C-Space>', "compe#complete()", {silent=true, expr=true})
     map('i', '<C-e>', "compe#close('<C-e>')", {silent=true, expr=true})
-    map('i', '<C-f>', "compe#scroll({'delta': +4})", {silent=true, expr=true})
-    map('i', '<C-d>', "compe#scroll({'delta': -4})", {silent=true, expr=true})
 
 
     --QuickfixList
@@ -95,6 +92,26 @@ M.default_bindings = function()
     map('n','<C-k>', ':cp <CR>')
     map('n','<M-j>', ':lnext <CR>')
     map('n','<M-k>', ':lprev <CR>')
+
+
+    --harpoon
+    map("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<CR>")
+    map("n", "<M-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
+    map("n", "<M-1>", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>")
+    map("n", "<M-2>", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>")
+    map("n", "<M-3>", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>")
+    map("n", "<M-4>", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>")
+    map("n", "<M-5>", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>")
+    map("n", "<M-6>", "<cmd>lua require('harpoon.ui').nav_file(6)<CR>")
+    map("n", "<M-7>", "<cmd>lua require('harpoon.ui').nav_file(7)<CR>")
+    map("n", "<M-8>", "<cmd>lua require('harpoon.ui').nav_file(8)<CR>")
+    map("n", "<M-9>", "<cmd>lua require('harpoon.ui').nav_file(9)<CR>")
+    map("n", "<M-0>", "<cmd>lua require('harpoon.ui').nav_file(10)<CR>")
+    map("n", "<M-t>", "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>")
+
+
+    --terminal
+    map("t", "<Esc>", "<C-\\><C-n>")
 
 end
 
