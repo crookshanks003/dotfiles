@@ -61,7 +61,8 @@ end
 
 --lsp_servers on_attach
 M.on_attach_common = function()
-    -- print("LSP Started")
+    print("LSP Started")
+	require("nvim_compe")
     require("keybindings").lsp_bindings()
 end
 

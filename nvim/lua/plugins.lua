@@ -25,9 +25,6 @@ return require('packer').startup(function(use)
     use "neovim/nvim-lspconfig"
     use {
         "hrsh7th/nvim-compe",
-        config = function()
-            require("nvim_compe")
-        end
     }
 
 
@@ -73,20 +70,25 @@ return require('packer').startup(function(use)
 
 
     --harpoon
-    use {
-        "ThePrimeagen/harpoon",
-        config = function()
-            require("harpoon").setup()
-        end
-    }
+	use {
+		"ThePrimeagen/harpoon",
+		config = function()
+			require("harpoon").setup(
+			{global_settings = {
+				save_on_toggle = false,
+				save_on_change = true,
+			}}
+			)
+		end
+	}
 
 
-    --formatter
-    use {
-        "mhartington/formatter.nvim",
-        config = function()
-            require("formatter_nvim")
-        end
-    }
+	--formatter
+	use {
+		"mhartington/formatter.nvim",
+		config = function()
+			require("formatter_nvim")
+		end
+	}
 
 end)

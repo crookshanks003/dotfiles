@@ -14,6 +14,7 @@ vim.cmd "set shortmess+=c"
 
 
 --opts--
+vim.o.completeopt = "menuone,noselect"
 opt('o', 'tabstop', indent)
 opt('o', 'softtabstop', indent)
 opt('o', 'shiftwidth', indent)
