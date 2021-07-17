@@ -35,7 +35,7 @@ opt('o', 'undofile', true)
 opt('o', 'scrolloff', 8)
 opt('o', 'sidescrolloff', 4 )
 opt('o', 'showmode', false)
-opt('o', 'colorcolumn', '100')
+opt('o', 'colorcolumn', '80')
 opt('o', 'cursorline', true)
 opt('o', 'termguicolors', true)
 
