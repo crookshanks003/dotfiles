@@ -1,52 +1,41 @@
 local M = {}
 
---helper--
-local function map(mode, lhs, rhs, opts)
-    local options = {noremap = true}
-    if opts then options = vim.tbl_extend('force', options, opts) end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
 M.default_bindings = function()
     --leader--
-    map('n','<Space>', '<NOP>', {silent = true})
+    vim.api.nvim_set_keymap('n','<Space>', '<NOP>', {silent = true})
     vim.g.mapleader=' '
 
-
     --defaults--
-    map('n', '<leader>m', ':bn<CR>')
-    map('n', '<leader>n', ':bp<CR>')
-    map('n', '<leader>h', '<C-w>h')
-    map('n', '<leader>l', '<C-w>l')
-    map('n', '<leader>j', '<C-w>j')
-    map('n', '<leader>k', '<C-w>k')
-    map('n', '<leader>v', ':wincmd v<CR>')
-    map('v','<leader>y','"+y')
-    map('v', '<leader>p', '"_dP')
-    map('v', '<leader>y', '"+y')
-    map('n', '<leader>+', ':res +5<CR>')
-    map('n', '<leader>-', ':res -5<CR>')
-    map('n', '+', ':vertical resize +5<CR>')
-    map('n', '-', ':vertical resize -5<CR>')
-    map("x", "<M-j>", ":move '>+1<CR>gv-gv")
-    map("x", "<M-k>", ":move '<-2<CR>gv-gv")
-    map("n", "H", "^")
-    map("n", "L", "$")
-    map('v', '<leader>d', '"_d')
-    map('n', '<leader>b', ":buffers<CR> :buffer ")
-
+    vim.api.nvim_set_keymap('n', '<leader>m', ':bn<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n', '<leader>n', ':bp<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', {noremap=true})
+    vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', {noremap=true})
+    vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>j', {noremap=true})
+    vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', {noremap=true})
+    vim.api.nvim_set_keymap('v','<leader>y','"+y', {noremap=true})
+    vim.api.nvim_set_keymap('v', '<leader>p', '"_dP', {noremap=true})
+    vim.api.nvim_set_keymap('v', '<leader>d', '"_d', {noremap=true})
+    vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap=true})
+    vim.api.nvim_set_keymap('n', '<leader>+', ':res +5<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n', '<leader>-', ':res -5<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n', '+', ':vertical resize +5<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n', '-', ':vertical resize -5<CR>', {noremap=true})
+    vim.api.nvim_set_keymap("x", "<M-j>", ":move '>+1<CR>gv-gv", {noremap=true})
+    vim.api.nvim_set_keymap("x", "<M-k>", ":move '<-2<CR>gv-gv", {noremap=true})
+    vim.api.nvim_set_keymap("n", "H", "^", {noremap=false})
+    vim.api.nvim_set_keymap("n", "L", "$", {noremap=false})
+    vim.api.nvim_set_keymap('n', '<leader>b', ":buffers<CR> :buffer ", {noremap=true})
+	vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap=true})
 
     --NvimTree
-    map('n', '<C-t>', ':NvimTreeToggle<CR>')
-
+    vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', {noremap=true})
 
     --Telescope
-    map('n', '<leader>fd', "<cmd>Telescope find_files cwd=~/dotfiles prompt_title=Dotfiles<CR>")
-    map('n', '<C-p>', "<cmd>Telescope git_files<CR>")
-    map('n', '<M-S-p>', "<cmd>Telescope find_files<CR>")
-    map('n', '<C-b>', "<cmd>Telescope buffers<CR>")
-    map('n', '<C-h>', "<cmd>Telescope oldfiles<CR>")
-
+    vim.api.nvim_set_keymap('n', '<leader>fd', "<cmd>Telescope find_files cwd=~/dotfiles prompt_title=Dotfiles<CR>", {noremap=true})
+    vim.api.nvim_set_keymap('n', '<C-p>', "<cmd>Telescope git_files<CR>", {noremap=true})
+    vim.api.nvim_set_keymap('n', '<M-S-p>', "<cmd>Telescope find_files<CR>", {noremap=true})
+    vim.api.nvim_set_keymap('n', '<C-b>', "<cmd>Telescope buffers<CR>", {noremap=true})
+    vim.api.nvim_set_keymap('n', '<C-h>', "<cmd>Telescope oldfiles<CR>", {noremap=true})
 
     --nvim-compe
     local t = function(str)
@@ -60,8 +49,6 @@ M.default_bindings = function()
     _G.tab_complete = function()
         if vim.fn.pumvisible() == 1 then
             return t "<C-n>"
-        -- elseif vim.fn['vsnip#available'](1) == 1 then
-        --     return t "<Plug>(vsnip-expand-or-jump)"
         elseif check_back_space() then
             return t "<Tab>"
         else
@@ -71,66 +58,53 @@ M.default_bindings = function()
     _G.s_tab_complete = function()
         if vim.fn.pumvisible() == 1 then
             return t "<C-p>"
-        -- elseif vim.fn['vsnip#jumpable'](-1) == 1 then
-        --     return t "<Plug>(vsnip-jump-prev)"
         else
-            -- If <S-Tab> is not working in your terminal, change it to <C-h>
             return t "<S-Tab>"
         end
     end
 
-    map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-    map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-    map('i', '<CR>', "compe#confirm('<CR>')", {silent=true, expr=true})
-    map('i', '<C-Space>', "compe#complete()", {silent=true, expr=true})
-    map('i', '<C-e>', "compe#close('<C-e>')", {silent=true, expr=true})
-
+    vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+    vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {noremap=true,expr = true})
+    vim.api.nvim_set_keymap('i', '<CR>', "compe#confirm('<CR>')", {noremap=true,silent=true, expr=true})
+    vim.api.nvim_set_keymap('i', '<C-Space>', "compe#complete()", {noremap=true,silent=true, expr=true})
+    vim.api.nvim_set_keymap('i', '<C-e>', "compe#close('<C-e>')", {noremap=true, silent=true, expr=true})
 
     --QuickfixList
     --TODO: Add a toggle option
-    map('n','<C-j>', ':cn <CR>')
-    map('n','<C-k>', ':cp <CR>')
-    map('n','<M-j>', ':lnext <CR>')
-    map('n','<M-k>', ':lprev <CR>')
-
+    vim.api.nvim_set_keymap('n','<C-j>', ':cn <CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','<C-k>', ':cp <CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','<M-j>', ':lnext <CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','<M-k>', ':lprev <CR>', {noremap=true})
 
     --harpoon
-    map("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<CR>")
-    map("n", "<M-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
-    map("n", "<M-1>", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>")
-    map("n", "<M-2>", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>")
-    map("n", "<M-3>", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>")
-    map("n", "<M-4>", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>")
-    map("n", "<M-5>", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>")
-    map("n", "<M-6>", "<cmd>lua require('harpoon.ui').nav_file(6)<CR>")
-    map("n", "<M-7>", "<cmd>lua require('harpoon.ui').nav_file(7)<CR>")
-    map("n", "<M-8>", "<cmd>lua require('harpoon.ui').nav_file(8)<CR>")
-    map("n", "<M-9>", "<cmd>lua require('harpoon.ui').nav_file(9)<CR>")
-    map("n", "<M-0>", "<cmd>lua require('harpoon.ui').nav_file(10)<CR>")
-    map("n", "<M-t>", "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>")
-
+    vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<CR>", {noremap=true})
+    vim.api.nvim_set_keymap("n", "<M-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", {noremap=true})
+    vim.api.nvim_set_keymap("n", "<M-1>", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", {noremap=true})
+    vim.api.nvim_set_keymap("n", "<M-2>", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", {noremap=true})
+    vim.api.nvim_set_keymap("n", "<M-3>", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", {noremap=true})
+    vim.api.nvim_set_keymap("n", "<M-4>", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", {noremap=true})
+    vim.api.nvim_set_keymap("n", "<M-5>", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", {noremap=true})
+    vim.api.nvim_set_keymap("n", "<M-t>", "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", {noremap=true})
 
     --terminal
-    map("t", "<Esc>", "<C-\\><C-n>")
+    vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap=true})
 
     --formatter
-    map('n','<leader>=', '<cmd>Format<CR>')
+    vim.api.nvim_set_keymap('n','<leader>=', '<cmd>Format<CR>', {noremap=true})
 
 end
 
 
 --LSP
 M.lsp_bindings = function()
-    map('n','gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-    map('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>')
-    map('n','K','<cmd>lua vim.lsp.buf.hover()<CR>')
-    map('n','gr','<cmd>lua vim.lsp.buf.references()<CR>')
-    map('n','gi','<cmd>lua vim.lsp.buf.implementation()<CR>')
-    map('n','<M-i>','<cmd>lua vim.lsp.buf.code_action()<CR>')
-    map('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>')
-    map('n','gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-    map('n','gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-    map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
+    vim.api.nvim_set_keymap('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','K','<cmd>lua vim.lsp.buf.hover()<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','gr','<cmd>lua vim.lsp.buf.references()<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','<M-i>','<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n','gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap=true})
+    vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', {noremap=true})
 end
 
 return M

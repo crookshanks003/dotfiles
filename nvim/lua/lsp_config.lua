@@ -25,7 +25,7 @@ M.config = function()
             spacing = 1,
         },
         signs = true,
-        underline = true,
+        underline = false,
     }
     )
 
@@ -64,6 +64,5 @@ M.on_attach_common = function()
     print("LSP Started")
     require("keybindings").lsp_bindings()
 end
-
 
 return M

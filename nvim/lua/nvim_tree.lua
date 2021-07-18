@@ -53,5 +53,4 @@ vim.g.nvim_tree_bindings = {
     { key = "y",                            cb = tree_cb("copy_name") },
     { key = "gy",                           cb = tree_cb("copy_absolute_path") },
     { key = "<BS>",                         cb = tree_cb("dir_up") },
-    { key = "g?",                           cb = tree_cb("toggle_help") },
 }

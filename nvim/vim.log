@@ -5,72 +5,72 @@ times in msec
  clock   elapsed:              other lines
 
 000.005  000.005: --- NVIM STARTING ---
-003.038  003.033: locale set
-040.027  036.989: inits 1
-040.333  000.306: window checked
-040.345  000.012: parsing arguments
-040.734  000.389: expanding arguments
-040.845  000.111: inits 2
-042.146  001.301: init highlight
-042.152  000.006: waiting for UI
-043.769  001.618: done waiting for UI
-043.807  000.038: initialized screen early for UI
-1085.823  023.836  023.836: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/gruvbox/colors/gruvbox.vim
-1391.467  1347.272  1323.437: sourcing /home/pritesh/.config/nvim/init.lua
-1391.529  000.450: sourcing vimrc file(s)
-1423.706  013.071  013.071: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
-1424.263  000.462  000.462: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
-1424.669  000.344  000.344: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
-1426.261  034.591  020.713: sourcing /usr/local/share/nvim/runtime/filetype.vim
-1427.440  000.259  000.259: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
-1429.029  000.214  000.214: sourcing /usr/local/share/nvim/runtime/indent.vim
-1434.426  001.272  001.272: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
-1444.784  000.837  000.837: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
-1463.606  032.485  030.377: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/gruvbox/colors/gruvbox.vim
-1465.205  034.736  002.251: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
-1465.303  035.139  000.403: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
-1516.429  001.129  001.129: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
-1516.694  000.191  000.191: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
-1517.157  000.409  000.409: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
-1520.174  000.879  000.879: sourcing /usr/local/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
-1520.513  003.297  002.418: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
-1521.208  000.646  000.646: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
-1522.967  001.701  001.701: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
-1554.524  030.841  030.841: sourcing /home/pritesh/.local/share/nvim/rplugin.vim
-1554.583  031.514  000.673: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
-1555.554  000.866  000.866: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
-1555.905  000.226  000.226: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
-1556.694  000.705  000.705: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
-1557.228  000.437  000.437: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
-1557.528  000.216  000.216: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
-1558.359  000.752  000.752: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
-1875.615  316.943  316.943: sourcing /home/pritesh/.config/nvim/plugin/packer_compiled.lua
-1876.220  055.457: loading plugins
-1902.490  017.485  017.485: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/emmet-vim/plugin/emmet.vim
-1910.608  007.294  007.294: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/formatter.nvim/plugin/formatter.vim
-1977.497  033.822  033.822: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/harpoon/plugin/mark.vim
-1993.051  014.307  014.307: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-compe/plugin/compe.vim
-1994.549  000.612  000.612: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
-1995.988  000.682  000.682: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua/plugin/tree.vim
-2019.142  021.905  021.905: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
-2019.661  000.050  000.050: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
-2019.766  000.037  000.037: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
-2019.888  000.063  000.063: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
-2020.854  000.361  000.361: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
-2049.508  020.285  020.285: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/playground/plugin/nvim-treesitter-playground.vim
-2069.125  007.466  007.466: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
-2132.872  033.447  033.447: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
-2221.005  013.837  013.837: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/vim-commentary/plugin/commentary.vim
-2221.692  173.818: loading packages
-2240.735  018.145  018.145: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-compe/after/plugin/compe.vim
-2241.782  001.945: loading after plugins
-2241.833  000.051: inits 3
-2303.554  061.721: reading ShaDa
-2303.779  000.225: opening buffers
-2402.281  098.502: BufEnter autocommands
-2402.299  000.018: editing files in windows
-2402.987  000.688: VimEnter autocommands
-2402.994  000.007: UIEnter autocommands
-2402.997  000.003: before starting main loop
-2405.454  002.457: first screen update
-2405.462  000.007: --- NVIM STARTED ---
+000.158  000.153: locale set
+000.315  000.156: inits 1
+000.322  000.007: window checked
+000.323  000.002: parsing arguments
+000.373  000.049: expanding arguments
+000.397  000.024: inits 2
+000.655  000.258: init highlight
+000.655  000.001: waiting for UI
+001.130  000.474: done waiting for UI
+001.136  000.006: initialized screen early for UI
+011.202  005.974  005.974: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/gruvbox/colors/gruvbox.vim
+033.157  031.940  025.966: sourcing /home/pritesh/.config/nvim/init.lua
+033.166  000.090: sourcing vimrc file(s)
+036.799  000.008  000.008: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+036.816  000.007  000.007: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+036.837  000.013  000.013: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+037.140  003.952  003.925: sourcing /usr/local/share/nvim/runtime/filetype.vim
+037.322  000.020  000.020: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
+037.500  000.018  000.018: sourcing /usr/local/share/nvim/runtime/indent.vim
+038.386  000.219  000.219: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+039.701  000.198  000.198: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+045.460  007.663  007.246: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/gruvbox/colors/gruvbox.vim
+045.763  008.070  000.407: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
+045.809  008.147  000.076: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
+046.570  000.139  000.139: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
+046.588  000.007  000.007: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
+046.645  000.049  000.049: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
+046.963  000.124  000.124: sourcing /usr/local/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+047.020  000.366  000.242: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
+047.118  000.089  000.089: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
+047.390  000.262  000.262: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
+047.493  000.006  000.006: sourcing /home/pritesh/.local/share/nvim/rplugin.vim
+047.497  000.090  000.085: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
+047.578  000.071  000.071: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
+047.607  000.014  000.014: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
+047.712  000.093  000.093: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
+047.777  000.047  000.047: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
+047.802  000.011  000.011: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
+047.923  000.111  000.111: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
+048.399  000.424  000.424: sourcing /home/pritesh/.config/nvim/plugin/packer_compiled.lua
+048.503  001.425: loading plugins
+049.661  001.031  001.031: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/emmet-vim/plugin/emmet.vim
+049.756  000.022  000.022: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/formatter.nvim/plugin/formatter.vim
+049.877  000.039  000.039: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/harpoon/plugin/mark.vim
+050.045  000.090  000.090: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-compe/plugin/compe.vim
+050.156  000.048  000.048: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+050.285  000.068  000.068: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua/plugin/tree.vim
+051.209  000.859  000.859: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
+051.285  000.008  000.008: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+051.317  000.007  000.007: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+051.339  000.011  000.011: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+051.404  000.020  000.020: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+051.631  000.144  000.144: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/playground/plugin/nvim-treesitter-playground.vim
+051.720  000.023  000.023: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+052.172  000.353  000.353: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
+052.325  000.090  000.090: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/vim-commentary/plugin/commentary.vim
+052.429  001.114: loading packages
+053.949  001.472  001.472: sourcing /home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-compe/after/plugin/compe.vim
+054.127  000.226: loading after plugins
+054.136  000.008: inits 3
+055.846  001.710: reading ShaDa
+055.962  000.116: opening buffers
+062.061  006.099: BufEnter autocommands
+062.063  000.003: editing files in windows
+062.200  000.137: VimEnter autocommands
+062.202  000.002: UIEnter autocommands
+062.203  000.001: before starting main loop
+062.818  000.615: first screen update
+062.820  000.002: --- NVIM STARTED ---

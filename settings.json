@@ -38,11 +38,11 @@
     "prettier.arrowParens": "avoid",
     "prettier.tabWidth": 4,
     "prettier.jsxBracketSameLine": true,
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true}",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Always, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true}",
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "editor.formatOnSave": true,
     "vim.camelCaseMotion.enable": true,
-    "terminal.integrated.fontFamily": "Cascadia Code Semilight",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
     "editor.detectIndentation": true,
@@ -164,8 +164,8 @@
     ],
     "workbench.colorCustomizations": {
         "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#282828",
-        "statusBar.debuggingBackground": "#282828"
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#cc241d"
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",

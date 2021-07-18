@@ -1,8 +1,8 @@
-background_opacity: 0.94
+background_opacity: 0.92
 colors:
   # Default colors
   primary:
-    background: "#262626"
+    background: "#1d1d1d"
     foreground: "#ebdbb2"
 
   # Normal colors
@@ -70,8 +70,8 @@ window:
   #   # scrollback is enabled (history > 0).
   #   multiplier: 10
   padding:
-      x: 6
-      y: 5
+      x: 5
+      y: 0
 
 # Allow terminal applications to change Alacritty's window title.
 #  dynamic_title: true

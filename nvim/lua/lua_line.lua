@@ -1,11 +1,4 @@
 local config = {
-	options = {
-		icons_enabled = true,
-		theme = 'gruvbox',
-		component_separators = {'', ''},
-		section_separators = {'', ''},
-		disabled_filetypes = {}
-	},
 	sections = {
 		lualine_a = {'mode'},
 		lualine_b = {'branch'},
@@ -22,8 +15,7 @@ local config = {
 		lualine_y = {},
 		lualine_z = {}
 	},
-	tabline = {},
-	extensions = {'nvim-tree'}
+	extensions = {'nvim-tree', 'fugitive'}
 }
 
 require'lualine'.setup(config)

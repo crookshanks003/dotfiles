@@ -1,51 +1,42 @@
---helper--
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo, g = vim.g}
-local opt = function (scope, key, value)
-	scopes[scope][key] = value
-	if scope ~= 'o' then scopes['o'][key] = value end
-end
-
 local indent=4
+
+vim.cmd "set shortmess+=c"
 
 --colorscheme--
 vim.cmd 'colorscheme gruvbox'
 vim.cmd 'au VimEnter * hi Normal guibg=NONE ctermbg=NONE'
-vim.cmd "set shortmess+=c"
-
+vim.cmd 'au VimEnter * highlight Comment cterm=italic gui=italic'
 
 --opts--
 vim.o.completeopt = "menuone,noselect"
-opt('o', 'tabstop', indent)
-opt('o', 'softtabstop', indent)
-opt('o', 'shiftwidth', indent)
-opt('o', 'expandtab', false)
-opt('o', 'smartindent', true)
-opt('o', 'swapfile', false)
-opt('o', 'number', true)
-opt('o', 'relativenumber', true)
-opt('o', 'wrap', false)
-opt('o', 'hlsearch', false)
-opt('o', 'incsearch', true)
-opt('o', 'hidden', true)
-opt('o', 'errorbells', false)
-opt('o', 'ignorecase', true)
-opt('o', 'smartcase', true)
-opt('o', 'backup', false)
-opt('o', 'undofile', true)
-opt('o', 'scrolloff', 8)
-opt('o', 'sidescrolloff', 4 )
-opt('o', 'showmode', false)
-opt('o', 'colorcolumn', '80')
-opt('o', 'cursorline', true)
-opt('o', 'termguicolors', true)
+vim.o.tabstop= indent
+vim.o.softtabstop= indent
+vim.o.shiftwidth= indent
+vim.o.expandtab= false
+vim.o.smartindent= true
+vim.o.swapfile= false
+vim.o.nu= true
+vim.o.relativenumber= true
+vim.o.wrap= false
+vim.o.hlsearch= false
+vim.o.incsearch= true
+vim.o.hidden= true
+vim.o.errorbells= false
+vim.o.ignorecase= true
+vim.o.smartcase= true
+vim.o.backup= false
+vim.o.undofile= true
+vim.o.scrolloff= 8
+vim.o.sidescrolloff= 4
+vim.o.showmode= false
+vim.o.colorcolumn= '80'
+vim.o.cursorline= true
+vim.o.termguicolors= true
 
-
---autocmds
 -- remove trailing whitespaces
 vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 -- remove trailing newline
 vim.cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])
 
-
 --emmet
-vim.g.user_emmet_leader_key = "!"
+vim.g.user_emmet_leader_key = "<C-y>"
