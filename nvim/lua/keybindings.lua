@@ -26,7 +26,7 @@ M.default_bindings = function()
 	map("n", "L", "$", {noremap=false})
 	map('n', '<leader>b', ":buffers<CR> :buffer ", {noremap=true})
 	map('n', 'Y', 'y$', {noremap=true})
-	map('v' ,'<leader>r', '"hy:%s/<C-r>h/<C-r>p/gc', {noremap=true })
+	map('v' ,'<leader>r', '"hy:lua require"keybindings".search_replace()<CR>', {noremap=true })
 
 	--NvimTree
 	map('n', '<C-t>', ':NvimTreeToggle<CR>', {noremap=true})
@@ -114,4 +114,16 @@ M.lsp_bindings = function()
 	map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', {noremap=true})
 end
 
+M.search_replace = function()
+	local select = vim.fn.getreg("h")
+	vim.fn.inputsave()
+	local input = vim.fn.input("Replace "..select.." with: ")
+	vim.fn.inputrestore()
+	if input == "" then
+		return
+	end
+	vim.cmd("%s/"..select.."/"..input.."/gc")
+end
+
+-- map('v' ,'<leader>r', '"hy:let @p=input(\'Enter > \')<CR> :exe %s/<C-r>h/<C-r>p/gc', {noremap=true })
 return M
