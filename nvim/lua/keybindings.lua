@@ -1,110 +1,117 @@
 local M = {}
+local map = vim.api.nvim_set_keymap
 
 M.default_bindings = function()
-    --leader--
-    vim.api.nvim_set_keymap('n','<Space>', '<NOP>', {silent = true})
-    vim.g.mapleader=' '
 
-    --defaults--
-    vim.api.nvim_set_keymap('n', '<leader>m', ':bn<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n', '<leader>n', ':bp<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', {noremap=true})
-    vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', {noremap=true})
-    vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>j', {noremap=true})
-    vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', {noremap=true})
-    vim.api.nvim_set_keymap('v','<leader>y','"+y', {noremap=true})
-    vim.api.nvim_set_keymap('v', '<leader>p', '"_dP', {noremap=true})
-    vim.api.nvim_set_keymap('v', '<leader>d', '"_d', {noremap=true})
-    vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap=true})
-    vim.api.nvim_set_keymap('n', '<leader>+', ':res +5<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n', '<leader>-', ':res -5<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n', '+', ':vertical resize +5<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n', '-', ':vertical resize -5<CR>', {noremap=true})
-    vim.api.nvim_set_keymap("x", "<M-j>", ":move '>+1<CR>gv-gv", {noremap=true})
-    vim.api.nvim_set_keymap("x", "<M-k>", ":move '<-2<CR>gv-gv", {noremap=true})
-    vim.api.nvim_set_keymap("n", "H", "^", {noremap=false})
-    vim.api.nvim_set_keymap("n", "L", "$", {noremap=false})
-    vim.api.nvim_set_keymap('n', '<leader>b', ":buffers<CR> :buffer ", {noremap=true})
-	vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap=true})
+	--leader--
+	vim.api.nvim_set_keymap('n','<Space>', '<NOP>', {silent = true})
+	vim.g.mapleader=' '
 
-    --NvimTree
-    vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', {noremap=true})
+	--defaults--
+	map('n', '<leader>m', ':bn<CR>', {noremap=true})
+	map('n', '<leader>n', ':bp<CR>', {noremap=true})
+	map('n', '<leader>h', '<C-w>h', {noremap=true})
+	map('n', '<leader>l', '<C-w>l', {noremap=true})
+	map('n', '<leader>j', '<C-w>j', {noremap=true})
+	map('n', '<leader>k', '<C-w>k', {noremap=true})
+	map('v','<leader>y','"+y', {noremap=true})
+	map('v', '<leader>p', '"_dP', {noremap=true})
+	map('v', '<leader>d', '"_d', {noremap=true})
+	map('v', '<leader>y', '"+y', {noremap=true})
+	map('n', '<leader>+', ':vertical resize +5<CR>', {noremap=true})
+	map('n', '<leader>-', ':vertical resize -5<CR>', {noremap=true})
+	map("x", "<M-j>", ":move '>+1<CR>gv-gv", {noremap=true})
+	map("x", "<M-k>", ":move '<-2<CR>gv-gv", {noremap=true})
+	map("n", "H", "^", {noremap=false})
+	map("n", "L", "$", {noremap=false})
+	map('n', '<leader>b', ":buffers<CR> :buffer ", {noremap=true})
+	map('n', 'Y', 'y$', {noremap=true})
+	map('v' ,'<leader>r', '"hy:%s/<C-r>h/<C-r>p/gc', {noremap=true })
 
-    --Telescope
-    vim.api.nvim_set_keymap('n', '<leader>fd', "<cmd>Telescope find_files cwd=~/dotfiles prompt_title=Dotfiles<CR>", {noremap=true})
-    vim.api.nvim_set_keymap('n', '<C-p>', "<cmd>Telescope git_files<CR>", {noremap=true})
-    vim.api.nvim_set_keymap('n', '<M-S-p>', "<cmd>Telescope find_files<CR>", {noremap=true})
-    vim.api.nvim_set_keymap('n', '<C-b>', "<cmd>Telescope buffers<CR>", {noremap=true})
-    vim.api.nvim_set_keymap('n', '<C-h>', "<cmd>Telescope oldfiles<CR>", {noremap=true})
+	--NvimTree
+	map('n', '<C-t>', ':NvimTreeToggle<CR>', {noremap=true})
 
-    --nvim-compe
-    local t = function(str)
-        return vim.api.nvim_replace_termcodes(str, true, true, true)
-    end
+	--Telescope
+	map('n', '<leader>fd', "<cmd>Telescope find_files cwd=~/dotfiles prompt_title=Dotfiles<CR>", {noremap=true})
+	map('n', '<C-p>', "<cmd>Telescope git_files<CR>", {noremap=true})
+	map('n', '<M-S-p>', "<cmd>Telescope find_files<CR>", {noremap=true})
+	map('n', '<C-b>', "<cmd>Telescope buffers<CR>", {noremap=true})
+	map('n', '<C-h>', "<cmd>Telescope oldfiles<CR>", {noremap=true})
+	map('n', '<leader>fp', ":Telescope grep_string search=", {noremap=true})
 
-    local check_back_space = function()
-        local col = vim.fn.col('.') - 1
-        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
-    end
-    _G.tab_complete = function()
-        if vim.fn.pumvisible() == 1 then
-            return t "<C-n>"
-        elseif check_back_space() then
-            return t "<Tab>"
-        else
-            return vim.fn['compe#complete']()
-        end
-    end
-    _G.s_tab_complete = function()
-        if vim.fn.pumvisible() == 1 then
-            return t "<C-p>"
-        else
-            return t "<S-Tab>"
-        end
-    end
+	--nvim-compe
+	local t = function(str)
+		return vim.api.nvim_replace_termcodes(str, true, true, true)
+	end
 
-    vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-    vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {noremap=true,expr = true})
-    vim.api.nvim_set_keymap('i', '<CR>', "compe#confirm('<CR>')", {noremap=true,silent=true, expr=true})
-    vim.api.nvim_set_keymap('i', '<C-Space>', "compe#complete()", {noremap=true,silent=true, expr=true})
-    vim.api.nvim_set_keymap('i', '<C-e>', "compe#close('<C-e>')", {noremap=true, silent=true, expr=true})
+	local check_back_space = function()
+		local col = vim.fn.col('.') - 1
+		return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+	end
+	_G.tab_complete = function()
+		if vim.fn.pumvisible() == 1 then
+			return t "<C-n>"
+		elseif check_back_space() then
+			return t "<Tab>"
+		else
+			return vim.fn['compe#complete']()
+		end
+	end
+	_G.s_tab_complete = function()
+		if vim.fn.pumvisible() == 1 then
+			return t "<C-p>"
+		else
+			return t "<S-Tab>"
+		end
+	end
 
-    --QuickfixList
-    --TODO: Add a toggle option
-    vim.api.nvim_set_keymap('n','<C-j>', ':cn <CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','<C-k>', ':cp <CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','<M-j>', ':lnext <CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','<M-k>', ':lprev <CR>', {noremap=true})
+	map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+	map("i", "<S-Tab>", "v:lua.s_tab_complete()", {noremap=true,expr = true})
+	map('i', '<CR>', "compe#confirm('<CR>')", {noremap=true,silent=true, expr=true})
+	map('i', '<C-Space>', "compe#complete()", {noremap=true,silent=true, expr=true})
+	map('i', '<C-e>', "compe#close('<C-e>')", {noremap=true, silent=true, expr=true})
 
-    --harpoon
-    vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<CR>", {noremap=true})
-    vim.api.nvim_set_keymap("n", "<M-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", {noremap=true})
-    vim.api.nvim_set_keymap("n", "<M-1>", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", {noremap=true})
-    vim.api.nvim_set_keymap("n", "<M-2>", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", {noremap=true})
-    vim.api.nvim_set_keymap("n", "<M-3>", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", {noremap=true})
-    vim.api.nvim_set_keymap("n", "<M-4>", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", {noremap=true})
-    vim.api.nvim_set_keymap("n", "<M-5>", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", {noremap=true})
-    vim.api.nvim_set_keymap("n", "<M-t>", "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", {noremap=true})
+	--QuickfixList
+	--TODO: Add a toggle option
+	map('n','<C-j>', ':cn <CR>', {noremap=true})
+	map('n','<C-k>', ':cp <CR>', {noremap=true})
+	map('n','<M-j>', ':lnext <CR>', {noremap=true})
+	map('n','<M-k>', ':lprev <CR>', {noremap=true})
 
-    --terminal
-    vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap=true})
+	--harpoon
+	map("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<CR>", {noremap=true})
+	map("n", "<M-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", {noremap=true})
+	map("n", "<M-1>", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", {noremap=true})
+	map("n", "<M-2>", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", {noremap=true})
+	map("n", "<M-3>", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", {noremap=true})
+	map("n", "<M-4>", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", {noremap=true})
+	map("n", "<M-5>", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", {noremap=true})
+	map("n", "<M-t>", "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", {noremap=true})
 
-    --formatter
-    vim.api.nvim_set_keymap('n','<leader>=', '<cmd>Format<CR>', {noremap=true})
+	--terminal
+	map("t", "<Esc>", "<C-\\><C-n>", {noremap=true})
+
+	--formatter
+	map('n','<leader>=', '<cmd>Format<CR>', {noremap=true})
+
+	--fugitive
+	map('n', '<leader>gs', ":vertical G<CR> :vertical resize 30<CR>", {noremap=true})
+	map('n', '<leader>gf', ":diffget //2 <CR>", {noremap=true})
+	map('n', '<leader>gj', ":diffget //3 <CR>", {noremap=true})
 
 end
 
 
 --LSP
 M.lsp_bindings = function()
-    vim.api.nvim_set_keymap('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','K','<cmd>lua vim.lsp.buf.hover()<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','gr','<cmd>lua vim.lsp.buf.references()<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','<M-i>','<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n','gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap=true})
-    vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', {noremap=true})
+	map('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>', {noremap=true})
+	map('n','K','<cmd>lua vim.lsp.buf.hover()<CR>', {noremap=true})
+	map('n','gr','<cmd>lua vim.lsp.buf.references()<CR>', {noremap=true})
+	map('n','<M-i>','<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap=true})
+	map('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>', {noremap=true})
+	map('n','gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', {noremap=true})
+	map('n','gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap=true})
+	map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', {noremap=true})
 end
 
 return M

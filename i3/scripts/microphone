@@ -19,7 +19,7 @@
 case $BLOCK_BUTTON in
     1)
     #/usr/bin/amixer set Capture toggle &>/dev/null;  # AlsaMixer
-    /usr/bin/pactl set-source-mute 2 toggle;  # PulseAudio
+    /usr/bin/pactl set-source-mute 1 toggle;  # PulseAudio
 esac
 
 

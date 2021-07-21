@@ -32,6 +32,11 @@ vim.o.showmode= false
 vim.o.colorcolumn= '80'
 vim.o.cursorline= true
 vim.o.termguicolors= true
+vim.opt.wildignore = "__pycache__"
+vim.opt.wildignore = vim.opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
+vim.opt.formatoptions = vim.opt.formatoptions
+	- "o"
+	- "r"
 
 -- remove trailing whitespaces
 vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
