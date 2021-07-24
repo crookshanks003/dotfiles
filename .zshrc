@@ -96,12 +96,26 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias .zsh="nvim ~/.zshrc"
-alias .nvim="cd ~/.config/nvim && nvim init.lua"
-alias .tmux="nvim ~/.tmux.conf"
-alias .alac="nvim ~/.config/alacritty/alacritty.yml"
-alias .i3="nvim ~/.config/i3/config"
-alias cl="clear"
+# alias .zsh="nvim ~/.zshrc"
+
+config(){
+	CURRENT=$(pwd)
+	case $1 in
+		".zsh")
+			nvim ~/.zshrc
+			;;
+		".nvim")
+			cd "~/.config/nvim" && nvim init.vim;;
+		".i3")
+			cd "~/.config/i3" && nvim config;;
+		".alac")
+			cd "~/config/alacritty" nvim alacritty.yml;;
+		".tmux")
+			nvim ~/.tmux.conf;;
+	esac
+	cd $CURRENT
+}
+
 alias vim="nvim"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export LC_ALL=en_IN.UTF-8
