@@ -51,7 +51,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+b exec brave-browser
+
+
+bindsym $mod+b exec brave
 bindsym $mod+c exec code
 bindsym $mod+Shift+s exec spotify
 
@@ -212,7 +214,7 @@ bindsym $mod+Escape mode "$mode_system"
 
 for_window [class="^.*"] border pixel 1
 
-exec --no-startup-id exec compton --config ~/dotfiles/compton.conf
+exec --no-startup-id exec picom --config ~/dotfiles/compton.conf
 exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/pritesh/dotfiles/Wallpapers/cypher.jpg'
 
 # Start i3bar to display a workspace bar (plus the system information i3status

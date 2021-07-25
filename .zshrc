@@ -109,15 +109,17 @@ config(){
 		".i3")
 			cd "~/.config/i3" && nvim config;;
 		".alac")
-			cd "~/config/alacritty" nvim alacritty.yml;;
+			cd "~/.config/alacritty" && nvim alacritty.yml;;
 		".tmux")
-			nvim ~/.tmux.conf;;
+			nvim ~/.config/tmux/tmux.conf;;
 	esac
 	cd $CURRENT
 }
 
 alias vim="nvim"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export LC_ALL=en_IN.UTF-8
-export LANG=en_IN.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export BAT_THEME="ansi-dark"
+
+alias luamake=/home/pritesh/.local/share/nvim/language-servers/lua-language-server/3rd/luamake/luamake

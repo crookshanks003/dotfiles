@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
 	use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
-	--treesitter
+	----treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config=require'nvim-treesitter.configs'.setup{highlight={enable=true}}}
 	use "nvim-treesitter/playground"
 
@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
 	use "kyazdani42/nvim-tree.lua"
 
 	--harpoon
-	use {"ThePrimeagen/harpoon", config=require("harpoon").setup( {global_settings = { save_on_toggle = false, save_on_change = true, }})}
+	use {"ThePrimeagen/harpoon", config=require("harpoon").setup( {global_settings = { save_on_toggle = false, save_on_change = true,}})}
 
 	--formatter
 	use "mhartington/formatter.nvim"
