@@ -39,7 +39,7 @@ vim.opt.formatoptions = vim.opt.formatoptions
 	- "r"
 
 -- remove trailing whitespaces
-vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
+-- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 -- remove trailing newline
 vim.cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])
 

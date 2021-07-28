@@ -1,29 +1,36 @@
 [global]
-    font = "Hack 9"
+    font = "Iosevka Term 9"
+	shrink = yes
     allow_markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
     indicate_hidden = yes
-    alignment = center
+    alignment = left
     bounce_freq = 0
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "200x5-6+30"
+    geometry = "300x6-16+41"
+	notification_height = 1
+	markup = full
     transparency = 0
-    idle_threshold = 120
+    idle_threshold = 90
     monitor = 0
     follow = mouse
-    sticky_history = yes
-    line_height = 0
+    sticky_history = no
+    line_height = 2
     separator_height = 2
-    padding = 8
-    horizontal_padding = 8
+    padding = 12
+    horizontal_padding = 12
     separator_color = "#585858"
     startup_notification = false
-    # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
-    #icon_position = left
-    #icon_folders = ~/.icons/Gruvbox-Material-Dark
+	browser = /usr/bin/brave -new-tab
+	stack_duplicates = false
+	hide_duplicate_count = yes
+	show_indicators = yes
+	max_icon_size= 80
+    icon_position = left
+    icon_folders = ~/.icons/Gruvbox-Material-Dark
 
 [frame]
     width = 1
@@ -36,16 +43,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#282828"
+    background = "#242424"
     foreground = "#ebdbb2"
-    timeout = 5
+    timeout = 20
 
 [urgency_normal]
-    background = "#282828"
+    background = "#242424"
     foreground = "#ebdbb2"
     timeout = 20
 
 [urgency_critical]
-    background = "#282828"
-    foreground = "#ebdbb2"
-    timeout = 0
+    background = "#242424"
+    foreground = "#fb4934"
+    timeout = 20

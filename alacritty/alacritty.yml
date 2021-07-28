@@ -55,6 +55,7 @@ font:
   size: 10
 
   ligatures: true
+  glyphs: true
 
   offset:
     x: 0

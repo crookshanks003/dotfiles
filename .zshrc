@@ -105,11 +105,11 @@ config(){
 			nvim ~/.zshrc
 			;;
 		".nvim")
-			cd "~/.config/nvim" && nvim init.vim;;
+			cd ~/.config/nvim && nvim init.vim;;
 		".i3")
-			cd "~/.config/i3" && nvim config;;
+			cd ~/.config/i3 && nvim config;;
 		".alac")
-			cd "~/.config/alacritty" && nvim alacritty.yml;;
+			cd ~/.config/alacritty && nvim alacritty.yml;;
 		".tmux")
 			nvim ~/.config/tmux/tmux.conf;;
 	esac
@@ -121,5 +121,7 @@ alias vim="nvim"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export BAT_THEME="ansi-dark"
+
+bindkey -s ^f "tmux-sessionizer\n"
 
 alias luamake=/home/pritesh/.local/share/nvim/language-servers/lua-language-server/3rd/luamake/luamake

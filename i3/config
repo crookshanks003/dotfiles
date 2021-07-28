@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:Iosevka Term 11
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# font pango:Iosevka Term 7
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -222,7 +222,7 @@ exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/pritesh/dotfile
 
 # set primary gruvbox colorscheme colors
 set $text-color #ebdbb2
-set $bg #282828
+set $bg #242424
 set $light-red #fb4934
 set $red #cc241d
 set $green #98971a
