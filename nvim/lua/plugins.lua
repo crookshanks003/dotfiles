@@ -1,6 +1,6 @@
 return require('packer').startup(function(use)
     -- Packer
-    use 'wbthomason/packer.nvim'
+	use 'wbthomason/packer.nvim'
 
 	--colorschemes
 	use "gruvbox-community/gruvbox"
@@ -37,8 +37,5 @@ return require('packer').startup(function(use)
 
 	--fugitive
 	use "tpope/vim-fugitive"
-
-	--autopairs
-	use "jiangmiao/auto-pairs"
 
 end)

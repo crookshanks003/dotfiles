@@ -15,7 +15,7 @@ local config = {
 		lualine_y = {},
 		lualine_z = {}
 	},
-	extensions = {'nvim-tree', 'fugitive'}
-}
+	extensions = {'nvim-tree', 'fugitive'
+}}
 
 require'lualine'.setup(config)
