@@ -55,7 +55,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 bindsym $mod+b exec brave
 bindsym $mod+c exec code
-bindsym $mod+Shift+s exec spotify
+bindsym $mod+Shift+s exec LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 
 
 # kill focused window
