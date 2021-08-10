@@ -125,3 +125,4 @@ export BAT_THEME="ansi-dark"
 bindkey -s ^f "tmux-sessionizer\n"
 
 alias luamake=/home/pritesh/.local/share/nvim/language-servers/lua-language-server/3rd/luamake/luamake
+alias gs="git status"

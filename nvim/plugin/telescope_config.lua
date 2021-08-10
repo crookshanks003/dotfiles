@@ -13,3 +13,4 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension('fzf')
+vim.cmd[[autocmd User TelescopePreviewerLoaded setlocal wrap]]

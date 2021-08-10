@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/emmet-vim"

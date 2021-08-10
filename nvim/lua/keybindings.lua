@@ -8,8 +8,6 @@ M.default_bindings = function()
 	vim.g.mapleader=' '
 
 	--defaults--
-	map('n', '<leader>m', ':bn<CR>', {noremap=true})
-	map('n', '<leader>n', ':bp<CR>', {noremap=true})
 	map('n', '<leader>h', '<C-w>h', {noremap=true})
 	map('n', '<leader>l', '<C-w>l', {noremap=true})
 	map('n', '<leader>j', '<C-w>j', {noremap=true})
@@ -94,6 +92,12 @@ M.default_bindings = function()
 	map('n', '<A-8>', ':BufferGoto 8<CR>', {noremap=true, silent=true})
 	map('n', '<A-9>', ':BufferGoto 9<CR>', {noremap=true, silent=true})
 	map('n', '<A-0>', ':BufferLast<CR>', {noremap=true, silent=true})
+
+	map('n', '<leader>n', ':BufferPrevious<CR>', {noremap=true, silent=true})
+	map('n', '<leader>m', ':BufferNext<CR>', {noremap=true, silent=true})
+	map('n', '<A-<Left>>', ':BufferMovePrevious<CR>', {noremap=true, silent=true})
+	map('n', '<A-<Right>>', ' :BufferMoveNext<CR>', {noremap=true, silent=true})
+
 
 	--terminal
 	map("t", "<Esc>", "<C-\\><C-n>", {noremap=true})
