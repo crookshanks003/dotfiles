@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
 	--lsp
 	use "neovim/nvim-lspconfig"
 	use "hrsh7th/nvim-compe"
+	use "hrsh7th/vim-vsnip"
 
 	--luaLine
 	use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
@@ -21,7 +22,6 @@ return require('packer').startup(function(use)
 
 	----treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config=require'nvim-treesitter.configs'.setup{highlight={enable=true}}}
-	use "nvim-treesitter/playground"
 
 	--emmet
 	use"mattn/emmet-vim"
@@ -29,13 +29,14 @@ return require('packer').startup(function(use)
 	--nvim_tree
 	use "kyazdani42/nvim-tree.lua"
 
-	--harpoon
-	use {"ThePrimeagen/harpoon", config=require("harpoon").setup( {global_settings = { save_on_toggle = false, save_on_change = true,}})}
-
 	--formatter
 	use "mhartington/formatter.nvim"
 
 	--fugitive
 	use "tpope/vim-fugitive"
 
+	--bufferline
+	use {
+		'romgrk/barbar.nvim',
+	}
 end)

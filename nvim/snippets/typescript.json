@@ -1,0 +1,11 @@
+{
+  "log": {
+    "prefix": ["cl"],
+    "body": "console.log(${1});"
+  }
+
+  "react-component":{
+	  "prefix": ["rfc"],
+	  "body": ""
+  }
+}

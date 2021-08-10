@@ -81,10 +81,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
-  harpoon = {
-    loaded = true,
-    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/harpoon"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/lualine.nvim"
@@ -113,10 +109,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
-  playground = {
-    loaded = true,
-    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/playground"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/plenary.nvim"
@@ -140,6 +132,10 @@ _G.packer_plugins = {
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 

@@ -37,6 +37,7 @@ vim.opt.wildignore = vim.opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
 vim.opt.formatoptions = vim.opt.formatoptions
 	- "o"
 	- "r"
+vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets"
 
 -- remove trailing whitespaces
 -- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])

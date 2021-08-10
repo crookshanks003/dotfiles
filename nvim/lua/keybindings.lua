@@ -22,11 +22,12 @@ M.default_bindings = function()
 	map('n', '<leader>-', ':vertical resize -5<CR>', {noremap=true})
 	map("x", "<M-j>", ":move '>+1<CR>gv-gv", {noremap=true})
 	map("x", "<M-k>", ":move '<-2<CR>gv-gv", {noremap=true})
-	map("n", "H", "^", {noremap=false})
-	map("n", "L", "$", {noremap=false})
+	map("", "H", "^", {noremap=false})
+	map("", "L", "$", {noremap=false})
 	map('n', '<leader>b', ":buffers<CR> :buffer ", {noremap=true})
 	map('n', 'Y', 'y$', {noremap=true})
-	map('v' ,'<C-f>', '"hy:lua require"keybindings".search_replace()<CR>', {noremap=true })
+	map('n', '<C-x>', ':bd<CR>', {noremap=true})
+	map('v' ,'<C-r>', '"hy:lua require"keybindings".search_replace()<CR>', {noremap=true })
 
 	--NvimTree
 	map('n', '<C-t>', ':NvimTreeToggle<CR>', {noremap=true})
@@ -37,7 +38,7 @@ M.default_bindings = function()
 	map('n', '<M-S-p>', "<cmd>Telescope find_files<CR>", {noremap=true})
 	map('n', '<C-b>', "<cmd>Telescope buffers<CR>", {noremap=true})
 	map('n', '<C-h>', "<cmd>Telescope oldfiles<CR>", {noremap=true})
-	map('n', '<leader>fp', ":Telescope grep_string search=", {noremap=true})
+	map('n', '<C-f>', ":Telescope grep_string search=", {noremap=true})
 
 	--nvim-compe
 	local t = function(str)
@@ -51,6 +52,8 @@ M.default_bindings = function()
 	_G.tab_complete = function()
 		if vim.fn.pumvisible() == 1 then
 			return t "<C-n>"
+		elseif vim.fn['vsnip#available'](1) == 1 then
+			return t "<Plug>(vsnip-expand-or-jump)"
 		elseif check_back_space() then
 			return t "<Tab>"
 		else
@@ -60,6 +63,8 @@ M.default_bindings = function()
 	_G.s_tab_complete = function()
 		if vim.fn.pumvisible() == 1 then
 			return t "<C-p>"
+		elseif vim.fn['vsnip#jumpable'](-1) == 1 then
+			return t "<Plug>(vsnip-jump-prev)"
 		else
 			return t "<S-Tab>"
 		end
@@ -72,21 +77,23 @@ M.default_bindings = function()
 	map('i', '<C-e>', "compe#close('<C-e>')", {noremap=true, silent=true, expr=true})
 
 	--QuickfixList
-	--TODO: Add a toggle option
 	map('n','<C-j>', ':cn <CR>', {noremap=true})
 	map('n','<C-k>', ':cp <CR>', {noremap=true})
 	map('n','<M-j>', ':lnext <CR>', {noremap=true})
 	map('n','<M-k>', ':lprev <CR>', {noremap=true})
+	map('n','<C-q>', ':lua require"keybindings".toggle_Qf_list(1)<CR>', {noremap=true})
 
-	--harpoon
-	map("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<CR>", {noremap=true})
-	map("n", "<M-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", {noremap=true})
-	map("n", "<M-1>", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", {noremap=true})
-	map("n", "<M-2>", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", {noremap=true})
-	map("n", "<M-3>", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", {noremap=true})
-	map("n", "<M-4>", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", {noremap=true})
-	map("n", "<M-5>", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", {noremap=true})
-	map("n", "<M-t>", "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", {noremap=true})
+	--Buffers
+	map('n', '<A-1>', ':BufferGoto 1<CR>', {noremap=true, silent=true})
+	map('n', '<A-2>', ':BufferGoto 2<CR>', {noremap=true, silent=true})
+	map('n', '<A-3>', ':BufferGoto 3<CR>', {noremap=true, silent=true})
+	map('n', '<A-4>', ':BufferGoto 4<CR>', {noremap=true, silent=true})
+	map('n', '<A-5>', ':BufferGoto 5<CR>', {noremap=true, silent=true})
+	map('n', '<A-6>', ':BufferGoto 6<CR>', {noremap=true, silent=true})
+	map('n', '<A-7>', ':BufferGoto 7<CR>', {noremap=true, silent=true})
+	map('n', '<A-8>', ':BufferGoto 8<CR>', {noremap=true, silent=true})
+	map('n', '<A-9>', ':BufferGoto 9<CR>', {noremap=true, silent=true})
+	map('n', '<A-0>', ':BufferLast<CR>', {noremap=true, silent=true})
 
 	--terminal
 	map("t", "<Esc>", "<C-\\><C-n>", {noremap=true})
@@ -97,7 +104,7 @@ M.default_bindings = function()
 	--fugitive
 	map('n', '<leader>gs', ":vertical G<CR> :vertical resize 30<CR>", {noremap=true})
 	map('n', '<leader>gf', ":diffget //2 <CR>", {noremap=true})
-	map('n', '<leader>gj', ":diffget //3 <CR>", {noremap=true})
+	map('n', '<leader>gh', ":diffget //3 <CR>", {noremap=true})
 
 end
 
@@ -125,5 +132,18 @@ M.search_replace = function()
 	vim.cmd("%s/"..select.."/"..input.."/gc")
 end
 
--- map('v' ,'<leader>r', '"hy:let @p=input(\'Enter > \')<CR> :exe %s/<C-r>h/<C-r>p/gc', {noremap=true })
+_G.qf_g = 0
+
+M.toggle_Qf_list = function(global)
+	if global == 1 then
+		if qf_g ~= 0 then
+			_G.qf_g = 0
+			vim.cmd("cclose")
+		else
+			_G.qf_g = 1
+			vim.cmd("copen")
+		end
+	end
+end
+
 return M
