@@ -22,9 +22,7 @@ M.default_bindings = function()
 	map("x", "<M-k>", ":move '<-2<CR>gv-gv", {noremap=true})
 	map("", "H", "^", {noremap=false})
 	map("", "L", "$", {noremap=false})
-	map('n', '<leader>b', ":buffers<CR> :buffer ", {noremap=true})
 	map('n', 'Y', 'y$', {noremap=true})
-	map('n', '<C-x>', ':bd<CR>', {noremap=true})
 	map('v' ,'<C-r>', '"hy:lua require"keybindings".search_replace()<CR>', {noremap=true })
 
 	--NvimTree
@@ -92,12 +90,13 @@ M.default_bindings = function()
 	map('n', '<A-8>', ':BufferGoto 8<CR>', {noremap=true, silent=true})
 	map('n', '<A-9>', ':BufferGoto 9<CR>', {noremap=true, silent=true})
 	map('n', '<A-0>', ':BufferLast<CR>', {noremap=true, silent=true})
+	map('n', '<leader>b', ":BufferPick<CR>", {noremap=true})
 
-	map('n', '<leader>n', ':BufferPrevious<CR>', {noremap=true, silent=true})
-	map('n', '<leader>m', ':BufferNext<CR>', {noremap=true, silent=true})
-	map('n', '<A-<Left>>', ':BufferMovePrevious<CR>', {noremap=true, silent=true})
-	map('n', '<A-<Right>>', ' :BufferMoveNext<CR>', {noremap=true, silent=true})
-
+	map('n', '<C-x>', ':BufferClose<CR>', {noremap=true})
+	map('n', '<leader><tab>', ':BufferPrevious<CR>', {noremap=true, silent=true})
+	map('n', '<tab>', ':BufferNext<CR>', {noremap=true, silent=true})
+	map('n', '<M-h>', ':BufferMovePrevious<CR>', {noremap=true, silent=true})
+	map('n', '<M-l>', ' :BufferMoveNext<CR>', {noremap=true, silent=true})
 
 	--terminal
 	map("t", "<Esc>", "<C-\\><C-n>", {noremap=true})
@@ -107,6 +106,7 @@ M.default_bindings = function()
 
 	--fugitive
 	map('n', '<leader>gs', ":vertical G<CR> :vertical resize 30<CR>", {noremap=true})
+	map("n", '<leader>gb', ":Git blame<CR>", {noremap=true})
 	map('n', '<leader>gf', ":diffget //2 <CR>", {noremap=true})
 	map('n', '<leader>gh', ":diffget //3 <CR>", {noremap=true})
 
@@ -136,17 +136,15 @@ M.search_replace = function()
 	vim.cmd("%s/"..select.."/"..input.."/gc")
 end
 
-_G.qf_g = 0
+_G.qf_g = 1
 
 M.toggle_Qf_list = function(global)
-	if global == 1 then
-		if qf_g ~= 0 then
-			_G.qf_g = 0
-			vim.cmd("cclose")
-		else
-			_G.qf_g = 1
-			vim.cmd("copen")
-		end
+	if qf_g ~= 0 then
+		_G.qf_g = 0
+		vim.cmd("cclose")
+	else
+		_G.qf_g = 1
+		vim.cmd("copen")
 	end
 end
 

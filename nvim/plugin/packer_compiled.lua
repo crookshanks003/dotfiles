@@ -97,6 +97,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
+  ["nvim-toggleterm.lua"] = {
+    loaded = true,
+    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"

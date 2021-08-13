@@ -62,5 +62,18 @@ require('formatter').setup({
 				}
 			end
 		},
+        cpp = {
+			function()
+				return {
+					exe = "clang-format",
+					args = {
+						"--assume-filename", vim.api.nvim_buf_get_name(0),
+						'-style="{ BasedOnStyle: LLVM, UseTab: Always, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true}"',
+					},
+					stdin = true,
+					cwd = vim.fn.expand('%:p:h')  -- Run clang-format in cwd of the file.
+				}
+			end
+		},
     }
 })

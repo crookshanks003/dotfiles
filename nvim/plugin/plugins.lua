@@ -40,10 +40,6 @@ return require('packer').startup(function(use)
 		'romgrk/barbar.nvim',
 	}
 
-	--harpoon
-	use {"ThePrimeagen/harpoon", config=require("harpoon").setup( {global_settings = { save_on_toggle = false, save_on_change = true,}})}
-
-
-	--cp-helper
-	use {'p00f/cphelper.nvim', rocks = 'http',}
+	--Toggle-term
+	use {"akinsho/nvim-toggleterm.lua"}
 end)
