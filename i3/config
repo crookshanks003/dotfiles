@@ -40,8 +40,8 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym XF86MonBrightnessUp exec bash ~/.config/i3/backlight.sh -inc 10
-bindsym XF86MonBrightnessDown exec bash ~/.config/i3/backlight.sh -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id bash ~/.config/i3/backlight.sh -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id bash ~/.config/i3/backlight.sh -dec 10
 
 bindsym --release $mod+x exec --no-startup-id import ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
 bindsym --release $mod+y exec --no-startup-id import -window root ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png

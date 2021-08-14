@@ -101,16 +101,16 @@ fi
 config(){
 	CURRENT=$(pwd)
 	case $1 in
-		".zsh")
+		"zsh")
 			nvim ~/.zshrc
 			;;
-		".nvim")
+		"nvim")
 			cd ~/.config/nvim && nvim init.vim;;
-		".i3")
+		"i3")
 			cd ~/.config/i3 && nvim config;;
-		".alac")
+		"alac")
 			cd ~/.config/alacritty && nvim alacritty.yml;;
-		".tmux")
+		"tmux")
 			nvim ~/.config/tmux/tmux.conf;;
 	esac
 	cd $CURRENT
@@ -125,4 +125,3 @@ export BAT_THEME="ansi-dark"
 bindkey -s ^f "tmux-sessionizer\n"
 
 alias luamake=/home/pritesh/.local/share/nvim/language-servers/lua-language-server/3rd/luamake/luamake
-alias gs="git status"
