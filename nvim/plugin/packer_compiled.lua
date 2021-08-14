@@ -89,6 +89,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-compe"
@@ -140,10 +144,6 @@ _G.packer_plugins = {
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 

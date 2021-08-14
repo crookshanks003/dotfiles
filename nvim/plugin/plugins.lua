@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
 	--lsp
 	use "neovim/nvim-lspconfig"
 	use "hrsh7th/nvim-compe"
-	use "hrsh7th/vim-vsnip"
 
 	--luaLine
 	use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
@@ -35,11 +34,17 @@ return require('packer').startup(function(use)
 	--fugitive
 	use "tpope/vim-fugitive"
 
+	--surround
+	use "tpope/vim-surround"
+
 	--bufferline
-	use {
-		'romgrk/barbar.nvim',
-	}
+	use { 'romgrk/barbar.nvim'}
 
 	--Toggle-term
 	use {"akinsho/nvim-toggleterm.lua"}
+
+	--auto-pairs
+	use{"windwp/nvim-autopairs"}
+	use{"windwp/nvim-ts-autotag"}
+
 end)

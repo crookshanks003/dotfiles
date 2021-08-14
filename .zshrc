@@ -98,14 +98,14 @@ fi
 # Example aliases
 # alias .zsh="nvim ~/.zshrc"
 
-config(){
+conf(){
 	CURRENT=$(pwd)
 	case $1 in
 		"zsh")
 			nvim ~/.zshrc
 			;;
 		"nvim")
-			cd ~/.config/nvim && nvim init.vim;;
+			cd ~/.config/nvim && nvim init.lua;;
 		"i3")
 			cd ~/.config/i3 && nvim config;;
 		"alac")

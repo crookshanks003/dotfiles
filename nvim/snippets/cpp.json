@@ -1,7 +1,0 @@
-
-{
-	"cp": {
-		"prefix": ["cp"],
-		"body": "#include<bits/stdc++.h>\nusing namespace std;\n\nint main(){\n    int t;\n    cin>>t;\n    while(t--){\n        ${1}\n    }\n    return 0;\n}"
-	}
-}
