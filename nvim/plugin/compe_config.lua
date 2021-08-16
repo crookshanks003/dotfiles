@@ -25,7 +25,7 @@ require'compe'.setup {
         calc = true;
         nvim_lsp = true;
         nvim_lua = false;
-        vsnip = true;
+        vsnip = false;
         ultisnips = false;
         luasnip = false;
     };

@@ -77,6 +77,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
+  ["express_line.nvim"] = {
+    loaded = true,
+    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/express_line.nvim"
+  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/formatter.nvim"
@@ -84,10 +88,6 @@ _G.packer_plugins = {
   gruvbox = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/gruvbox"
-  },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -112,6 +112,10 @@ _G.packer_plugins = {
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -144,6 +148,10 @@ _G.packer_plugins = {
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/vim-surround"
   }
 }
 

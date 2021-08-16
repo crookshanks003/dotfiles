@@ -64,11 +64,11 @@
             "commands": [":bprev"]
         },
         {
-            "before": ["]", "g"],
+            "before": ["g", "n"],
             "commands": ["editor.action.marker.nextInFiles"]
         },
         {
-            "before": ["[", "g"],
+            "before": ["g", "p"],
             "commands": ["editor.action.marker.prevInFiles"]
         },
         {
@@ -80,7 +80,7 @@
             ]
         },
         {
-            "before": ["g", "s"],
+            "before": ["<leader>", "r"],
             "commands": ["editor.action.rename"],
             "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
         },
@@ -126,6 +126,10 @@
         {
             "before": ["<leader>", "d"],
             "commands": ["fileutils.removeFile"]
+        },
+        {
+            "before": ["<leader>", "m"],
+            "commands": ["fileutils.moveFile"]
         },
         {
             "before": ["<leader>", "m"],
@@ -204,5 +208,6 @@
     "editor.minimap.enabled": false,
     "editor.semanticHighlighting.enabled": true,
     "breadcrumbs.enabled": false,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "scm.diffDecorationsGutterAction": "none"
 }

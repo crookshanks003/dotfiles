@@ -12,8 +12,8 @@ return require('packer').startup(function(use)
 	use "neovim/nvim-lspconfig"
 	use "hrsh7th/nvim-compe"
 
-	--luaLine
-	use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
+	--statusline
+	use{'tjdevries/express_line.nvim'}
 
 	--telescope
 	use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
 
 	--bufferline
 	use { 'romgrk/barbar.nvim'}
+	use{'kyazdani42/nvim-web-devicons'}
 
 	--Toggle-term
 	use {"akinsho/nvim-toggleterm.lua"}
