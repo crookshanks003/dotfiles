@@ -35,7 +35,7 @@ vim.o.termguicolors= true
 vim.opt.wildignore = "__pycache__"
 vim.opt.wildignore = vim.opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
 vim.opt.guicursor = "a:block"
-vim.o.statusline = '%!v:lua.StatusLine()'
+-- vim.o.statusline = '%!v:lua.StatusLine()'
 
 -- remove trailing whitespaces
 -- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
