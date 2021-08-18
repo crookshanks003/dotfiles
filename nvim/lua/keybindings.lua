@@ -22,7 +22,6 @@ M.default_bindings = function()
 	map("x", "<M-k>", ":move '<-2<CR>gv-gv", {noremap=true})
 	map("", "H", "^", {noremap=false})
 	map("", "L", "$", {noremap=false})
-	map('n', 'Y', 'y$', {noremap=true})
 	map('v' ,'<C-r>', '"hy:lua require"keybindings".search_replace()<CR>', {noremap=true })
 
 	--NvimTree
