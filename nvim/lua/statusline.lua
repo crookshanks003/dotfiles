@@ -2,7 +2,7 @@ local fn = vim.fn
 local api = vim.api
 local M = {}
 
-M.modes = {
+M.modes = setmetatable({
 	['n']  = '%#GruvboxFg0# Normal ';
 	['no'] = '%#GruvboxFg0# N·pending ';
 	['v']  = '%#GruvboxOrange# Visual ';
@@ -23,7 +23,11 @@ M.modes = {
 	['r?'] = '%#GruvboxGreen# Confirm ';
 	['!']  = '%#GruvboxGreen# Shell ';
 	['t']  = '%#GruvboxPurple# Terminal ';
-}
+}, {
+  __index = function()
+      return 'Unknown'
+  end
+})
 
 M.get_mode = function(self)
 	local mode = api.nvim_get_mode().mode
@@ -79,11 +83,6 @@ M.set_active = function(self)
 end
 
 M.set_inactive = function ()
-	local filetype = vim.bo.filetype
-	if filetype == "fugitive" or filetype == "NvimTree" then
-		return "%="..filetype.."%="
-	end
-
 	return "%#StatusLineNC#".."%=%f%="
 end
 
