@@ -125,3 +125,8 @@ export BAT_THEME="ansi-dark"
 bindkey -s ^f "tmux-sessionizer\n"
 
 alias luamake=/home/pritesh/.local/share/nvim/language-servers/lua-language-server/3rd/luamake/luamake
+
+#tmux alias
+alias ta="tmux a"
+alias tk="tmux kill-server"
+alias tks="tmux kill-session"

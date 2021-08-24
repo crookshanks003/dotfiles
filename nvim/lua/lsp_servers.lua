@@ -37,6 +37,11 @@ nvim_lsp.tsserver.setup{
 	}
 }
 
+--jsonls
+require'lspconfig'.jsonls.setup{
+	on_attach = lsp_config.on_attach_common,
+}
+
 
 --pyright
 nvim_lsp.pyright.setup{

@@ -29,18 +29,14 @@ vim.o.undofile= true
 vim.o.scrolloff= 8
 vim.o.sidescrolloff= 4
 vim.o.showmode= false
-vim.o.colorcolumn= '80'
+vim.o.colorcolumn= '100'
 vim.o.cursorline= true
 vim.o.termguicolors= true
 vim.opt.wildignore = "__pycache__"
 vim.opt.wildignore = vim.opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
 vim.opt.guicursor = "a:block"
--- vim.o.statusline = '%!v:lua.StatusLine()'
 
 -- remove trailing whitespaces
 -- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 -- remove trailing newline
 vim.cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])
-
---emmet
-vim.g.user_emmet_leader_key = "<C-y>"

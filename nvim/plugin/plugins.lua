@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
 	use { 'romgrk/barbar.nvim', requires="kyazdani42/nvim-web-devicons"}
 
 	--auto-pairs
-	use{"windwp/nvim-autopairs", config=require("nvim-autopairs").setup()}
+	use{"windwp/nvim-autopairs"}
 	use{"windwp/nvim-ts-autotag"}
 
 end)
