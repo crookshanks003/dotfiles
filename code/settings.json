@@ -11,7 +11,7 @@
     "editor.fontLigatures": true,
     "editor.accessibilitySupport": "off",
     "editor.wordWrap": "on",
-    "editor.cursorStyle": "line",
+    "editor.cursorStyle": "block",
     "git.enableSmartCommit": true,
     "editor.fontSize": 16,
     "explorer.confirmDelete": false,
@@ -56,6 +56,14 @@
     "vim.mouseSelectionGoesIntoVisualMode": false,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
+            "before": ["<S-h>"],
+            "after": ["^"]
+        },
+        {
+            "before": ["<S-l>"],
+            "after": ["$"]
+        },
+        {
             "before": ["<tab>"],
             "commands": [":bnext"]
         },
@@ -80,9 +88,8 @@
             ]
         },
         {
-            "before": ["<leader>", "r"],
-            "commands": ["editor.action.rename"],
-            "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+            "before": ["<leader>", "="],
+            "commands": ["editor.action.formatDocument"]
         },
         {
             "before": ["g", "l"],
@@ -158,6 +165,14 @@
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
+            "before": ["<S-h>"],
+            "after": ["^"]
+        },
+        {
+            "before": ["<S-l>"],
+            "after": ["$"]
+        },
+        {
             "before": ["<leader>", "d"],
             "after": ["\"", "_", "d"]
         }
@@ -209,5 +224,8 @@
     "editor.semanticHighlighting.enabled": true,
     "breadcrumbs.enabled": false,
     "window.zoomLevel": 1,
-    "scm.diffDecorationsGutterAction": "none"
+    "scm.diffDecorationsGutterAction": "none",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.neovimConfigPath": "~/dotfiles/code/init.vim",
+    "vim.enableNeovim": true
 }
