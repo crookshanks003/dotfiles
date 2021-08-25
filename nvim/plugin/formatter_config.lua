@@ -10,7 +10,7 @@ require('formatter').setup({
 						'--single-quote',
 						'--tab-width', 4,
 						'--use-tabs',
-						'--print-width', 100,
+						'--print-width', 80,
 					},
 					stdin = true
 				}
@@ -25,7 +25,7 @@ require('formatter').setup({
 						'--single-quote',
 						'--tab-width', 4,
 						'--use-tabs',
-						'--print-width', 100,
+						'--print-width', 80,
 					},
 					stdin = true
 				}
@@ -40,7 +40,7 @@ require('formatter').setup({
 						'--double-quote',
 						'--tab-width', 4,
 						'--use-tabs',
-						'--print-width', 100,
+						'--print-width', 80,
 					},
 					stdin = true
 				}
@@ -55,7 +55,7 @@ require('formatter').setup({
 						'--single-quote=false',
 						'--tab-width', 4,
 						'--use-tabs',
-						'--print-width', 100,
+						'--print-width', 80,
 						'--jsx-bracket-same-line',
 					},
 					stdin = true
