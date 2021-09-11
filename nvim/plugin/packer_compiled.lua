@@ -101,10 +101,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
-  ["nvim-ts-autotag"] = {
-    loaded = true,
-    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"

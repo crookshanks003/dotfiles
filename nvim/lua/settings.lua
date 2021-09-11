@@ -40,3 +40,4 @@ vim.opt.guicursor = "a:block"
 -- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 -- remove trailing newline
 vim.cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])
+vim.cmd[[au BufNewFile,BufRead *.ejs set filetype=html]]

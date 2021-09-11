@@ -7,7 +7,7 @@ require('formatter').setup({
 					exe = "prettier",
 					args = {
 						"--stdin-filepath", vim.api.nvim_buf_get_name(0),
-						'--single-quote',
+						'--single-quote=false',
 						'--tab-width', 4,
 						'--use-tabs',
 						'--print-width', 80,
@@ -22,10 +22,10 @@ require('formatter').setup({
 					exe = "prettier",
 					args = {
 						"--stdin-filepath", vim.api.nvim_buf_get_name(0),
-						'--single-quote',
+						'--single-quote=false',
 						'--tab-width', 4,
 						'--use-tabs',
-						'--print-width', 80,
+						'--print-width', 100,
 					},
 					stdin = true
 				}
@@ -40,7 +40,7 @@ require('formatter').setup({
 						'--single-quote=false',
 						'--tab-width', 4,
 						'--use-tabs',
-						'--print-width', 80,
+						'--print-width', 100,
 					},
 					stdin = true
 				}
@@ -55,7 +55,7 @@ require('formatter').setup({
 						'--single-quote=false',
 						'--tab-width', 4,
 						'--use-tabs',
-						'--print-width', 80,
+						'--print-width', 100,
 						'--jsx-bracket-same-line',
 					},
 					stdin = true
@@ -77,7 +77,7 @@ require('formatter').setup({
 				}
 			end
 		},
-		cssls = {
+		css = {
 			function ()
 				return {
 					exe="prettier",
@@ -89,6 +89,22 @@ require('formatter').setup({
 						'--print-width', 100,
 					},
 					stdin=true
+				}
+			end
+		},
+		html = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath", vim.api.nvim_buf_get_name(0),
+						'--single-quote=false',
+						'--tab-width', 4,
+						'--use-tabs',
+						'--print-width', 100,
+						'--jsx-bracket-same-line',
+					},
+					stdin = true
 				}
 			end
 		},
