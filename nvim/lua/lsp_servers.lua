@@ -80,3 +80,8 @@ require'lspconfig'.cssls.setup{
 	capabilities = capabilities,
 	on_attach = lsp_config.on_attach_common
 }
+
+--rust-analyzer
+require'lspconfig'.rust_analyzer.setup{
+	on_attach = lsp_config.on_attach_common
+}

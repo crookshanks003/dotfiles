@@ -3,24 +3,26 @@ configuration {
     display-window:                 "Window";
     modi:                           "window,drun,ssh,combi,run";
     show-icons:true;
-    /* fake-transparency: true; */
 }
 
 element-icon {
-  margin: 0 15px 0 0;
+  margin: 3px 15px 0 0;
   size: 20;
 }
 
 * {
     lines: 15;
     columns: 1;
-    background-color: #282828E6;
     border-color: #00000000;
-    text-color: #fbf1c7;
     font: "Iosevka Term 16";
+    background:                  #222222ED;
+    foreground:                  #fbf1c7;
+    alternate-normal-background: #222222ED;
+    alternate-normal-foreground: #fbf1c7;
+    selected-normal-background:  #98971a;
 }
 
-#window {
+window {
     border: 0;
     border-radius: 4px;
     padding: 50;
@@ -29,18 +31,17 @@ element-icon {
     opacity: "90";
 }
 
-#mainbox {
+mainbox {
     background-color: #00000000;
     children: [inputbar, listview];
     spacing: 10px;
-    /*margin: 20%;*/
     padding: 30px 0;
     border: 1px;
     border-color: @base0D;
 }
 
 
-#listview {
+listview {
     background-color: #00000000;
     fixed-height: 0;
     border: 0px;
@@ -49,41 +50,32 @@ element-icon {
     padding: 10px 10px 0px;
 }
 
-#element {
+element {
     background-color: #00000000;
     border: 0;
     border-radius: 15px;
     padding: 5 0  5 10 ;
 }
 
-#element selected {
-    background-color: #98971a;
+element selected {
+    background: #98971aff;
     text-color: #fbf1c7;
 }
 
-
-#inputbar {
-    children:   [ entry,case-indicator ];
+inputbar {
+    children:   [entry,case-indicator];
     background-color: #00000000;
     padding: 0 0 0 14;
 }
 
-#case-indicator {
+case-indicator {
     background-color: #00000000;
-    spacing:    0;
-}
-#entry {
-    background-color: #00000000;
-    spacing:    0;
-}
-#prompt {
-    background-color: #00000000;
+	text-color: #ebdbb2;
     spacing:    0;
 }
 
-#textbox-prompt-colon {
+entry {
     background-color: #00000000;
-    expand:     false;
-    str:        ":";
-    margin:     0px 0.3em 0em 0em ;
+    spacing:    0;
+	placeholder: "";
 }

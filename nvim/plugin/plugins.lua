@@ -16,14 +16,14 @@ return require('packer').startup(function(use)
 
 	--lsp
 	use "neovim/nvim-lspconfig"
-	use "hrsh7th/nvim-compe"
+	use {"hrsh7th/nvim-compe"}
 
 	--telescope
-	use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
+	use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim', module="plenary"}}}
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
 	----treesitter
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config=require'nvim-treesitter.configs'.setup{highlight={enable=true}}}
+	use { 'nvim-treesitter/nvim-treesitter', config=require'nvim-treesitter.configs'.setup{highlight={enable=true}}}
 
 	--nvim_tree
 	use "kyazdani42/nvim-tree.lua"
@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
 	use "mhartington/formatter.nvim"
 
 	--bufferline
-	use { 'romgrk/barbar.nvim', requires="kyazdani42/nvim-web-devicons"}
+	use { 'romgrk/barbar.nvim', requires={"kyazdani42/nvim-web-devicons", module="nvim-web-devicons"}}
 
 	--auto-pairs
 	use{"windwp/nvim-autopairs"}
