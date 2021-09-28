@@ -2,20 +2,18 @@ local M = {}
 
 M.config = function()
 	vim.fn.sign_define(
-	"LspDiagnosticsSignError",
-	{texthl = "LspDiagnosticsSignError", text = ">>", numhl = "LspDiagnosticsSignError"}
+		"LspDiagnosticsSignError", {texthl = "LspDiagnosticsSignError", text = ">>", numhl = "LspDiagnosticsSignError"}
 	)
+
 	vim.fn.sign_define(
-	"LspDiagnosticsSignWarning",
-	{texthl = "LspDiagnosticsSignWarning", text = ">>", numhl = "LspDiagnosticsSignWarning"}
+		"LspDiagnosticsSignWarning", {texthl = "LspDiagnosticsSignWarning", text = ">>", numhl = "LspDiagnosticsSignWarning"})
+
+	vim.fn.sign_define(
+		"LspDiagnosticsSignHint", {texthl = "LspDiagnosticsSignHint", text = ">>", numhl = "LspDiagnosticsSignHint"}
 	)
+
 	vim.fn.sign_define(
-	"LspDiagnosticsSignHint",
-	{texthl = "LspDiagnosticsSignHint", text = ">>", numhl = "LspDiagnosticsSignHint"}
-	)
-	vim.fn.sign_define(
-	"LspDiagnosticsSignInformation",
-	{texthl = "LspDiagnosticsSignInformation", text = ">>", numhl = "LspDiagnosticsSignInformation"}
+		"LspDiagnosticsSignInformation", {texthl = "LspDiagnosticsSignInformation", text = ">>", numhl = "LspDiagnosticsSignInformation"}
 	)
 
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -61,7 +59,7 @@ end
 
 --lsp_servers on_attach
 M.on_attach_common = function()
-	print("LSP Started")
+	-- print("LSP Started")
 	require("keybindings").lsp_bindings()
 end
 

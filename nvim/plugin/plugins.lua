@@ -1,5 +1,5 @@
 return require('packer').startup(function(use)
-    -- Packer
+    	-- Packer
 	use 'wbthomason/packer.nvim'
 
 	--colorschemes

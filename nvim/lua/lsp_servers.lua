@@ -4,7 +4,7 @@ local data = vim.fn.stdpath('data')
 
 
 --lua
-local lua_dir = data.."/language-servers/lua-language-server/"
+local lua_dir = data.."/language-servers/lua-language-server"
 local lua_binary = lua_dir.."/bin/Linux/lua-language-server"
 
 nvim_lsp.sumneko_lua.setup {
