@@ -32,7 +32,6 @@
     "editor.linkedEditing": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "prettier.arrowParens": "avoid",
-    "prettier.tabWidth": 4,
     "prettier.jsxBracketSameLine": true,
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Always, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true}",
     "workbench.colorTheme": "Gruvbox Dark Hard",
@@ -194,22 +193,18 @@
             "strings": true
         },
         "editor.suggest.insertMode": "replace",
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescriptreact]": {
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.tabSize": 4
     },
     "[typescript]": {
-        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[html]": {
         "editor.suggest.insertMode": "replace",
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "files.exclude": {
         "**/node_modules": true,

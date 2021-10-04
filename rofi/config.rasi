@@ -15,7 +15,7 @@ element-icon {
     columns: 1;
     border-color: #00000000;
     font: "Iosevka Term 16";
-    background:                  #222222ED;
+    background:                  #222222;
     foreground:                  #fbf1c7;
     alternate-normal-background: #222222ED;
     alternate-normal-foreground: #fbf1c7;
