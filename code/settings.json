@@ -35,7 +35,6 @@
     "prettier.jsxBracketSameLine": true,
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Always, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true}",
     "workbench.colorTheme": "Gruvbox Dark Hard",
-    "editor.formatOnSave": true,
     "vim.camelCaseMotion.enable": true,
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.insertSpaces": true,
@@ -226,5 +225,8 @@
     "scm.diffDecorationsGutterAction": "none",
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.neovimConfigPath": "~/dotfiles/code/init.vim",
-    "vim.enableNeovim": true
+    "vim.enableNeovim": true,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false
 }

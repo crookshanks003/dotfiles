@@ -97,10 +97,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/pritesh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
