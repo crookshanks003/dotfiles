@@ -40,17 +40,17 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym XF86MonBrightnessUp exec --no-startup-id bash ~/.config/i3/backlight.sh -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id bash ~/.config/i3/backlight.sh -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 
-bindsym --release $mod+x exec --no-startup-id import ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
-bindsym --release $mod+y exec --no-startup-id import -window root ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
+bindsym --release $mod+x exec --no-startup-id import -silent ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
+bindsym --release $mod+y exec --no-startup-id import -silent -window root ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 
 bindsym $mod+b exec brave
@@ -194,7 +194,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #exit
-bindsym $mod+Delete exec i3lock --color "$bg"
+bindsym $mod+Delete exec blurlock
 
 set $Locker i3lock && sleep 1
 set $mode_system (l)lock  (e)logout  (s)suspend  (h)hibernate  (r)reboot  (Shift+s)shutdown
@@ -214,15 +214,14 @@ bindsym $mod+Escape mode "$mode_system"
 
 for_window [class="^.*"] border pixel 1
 
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id exec picom --config ~/dotfiles/compton.conf
 exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/pritesh/dotfiles/Wallpapers/cypher.jpg'
+exec --no-startup-id xautolock -time 15 -locker blurlock
+exec --no-startup-id conky
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-# set primary gruvbox colorscheme colors
 set $text-color #ebdbb2
-set $bg #242424
+set $bg #222222
 set $light-red #fb4934
 set $red #cc241d
 set $green #98971a
@@ -260,6 +259,6 @@ client.urgent           $red                $red               $text-color      
 
 hide_edge_borders smart
 
-gaps inner 18
-gaps outer 0
-# smart_gaps on
+gaps inner 14
+gaps outer -2
+smart_gaps on
