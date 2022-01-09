@@ -1,13 +1,11 @@
 
 -- g.nvim_tree_side = "left"
 -- g.nvim_tree_width = 30
-vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache"}
 -- g.nvim_tree_auto_open = 0
 -- g.nvim_tree_auto_close = 1
 -- g.nvim_tree_quit_on_open = 0
 -- g.nvim_tree_follow = 1
 vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_hide_dotfiles = 1
 -- g.nvim_tree_git_hl = 0
 vim.g.nvim_tree_root_folder_modifier = ":~"
 -- g.nvim_tree_tab_open = 0
@@ -47,7 +45,8 @@ require"nvim-tree".setup{
 	open_on_tab         = false,
 	hijack_cursor       = false,
 	update_cwd          = false,
-	lsp_diagnostics     = false,
+	nvim_tree_hide_dotfiles = 1,
+	nvim_tree_ignore = {".git", "node_modules", ".cache"},
 	update_focused_file = {
 		enable      = true,
 		update_cwd  = false,

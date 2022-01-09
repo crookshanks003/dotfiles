@@ -59,8 +59,8 @@ M.get_filename = function ()
 end
 
 M.get_lsp_status = function ()
-	local errors = vim.lsp.diagnostic.get_count(0, "Error")
-    local hints = vim.lsp.diagnostic.get_count(0, "Hint")
+	local errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+    local hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
     return string.format("E:%d  H:%d ", errors, hints)
 end
 

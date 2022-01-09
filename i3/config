@@ -23,10 +23,11 @@ font pango:Iosevka Term 11
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- blurlock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id xset b off
 exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -196,7 +197,7 @@ bindsym $mod+r mode "resize"
 #exit
 bindsym $mod+Delete exec blurlock
 
-set $Locker i3lock && sleep 1
+set $Locker blurlock && sleep 1
 set $mode_system (l)lock  (e)logout  (s)suspend  (h)hibernate  (r)reboot  (Shift+s)shutdown
 mode "$mode_system" {
         bindsym l exec --no-startup-id $Locker, mode "default"
@@ -215,9 +216,9 @@ bindsym $mod+Escape mode "$mode_system"
 for_window [class="^.*"] border pixel 1
 
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id exec picom --config ~/dotfiles/compton.conf
-exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/pritesh/dotfiles/Wallpapers/cypher.jpg'
-exec --no-startup-id xautolock -time 15 -locker blurlock
+# exec --no-startup-id exec picom --config ~/dotfiles/compton.conf
+exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/crookshanks/dotfiles/Wallpapers/cypher.jpg'
+# exec --no-startup-id xautolock -time 15 -locker blurlock
 exec --no-startup-id conky
 
 set $text-color #ebdbb2
