@@ -127,6 +127,11 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export BAT_THEME="ansi-dark"
 export NODE_PATH=/usr/lib/node_modules
+export GOPATH=$HOME/go
+export GOROOT=/usr/lib/go
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 bindkey -s ^f "tmux-sessionizer\n"
 

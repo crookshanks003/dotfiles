@@ -1,5 +1,5 @@
 return require('packer').startup(function(use)
-    	-- Packer
+    -- Packer
 	use 'wbthomason/packer.nvim'
 
 	--colorschemes
@@ -16,14 +16,14 @@ return require('packer').startup(function(use)
 
 	--lsp
 	use "neovim/nvim-lspconfig"
-	use {"hrsh7th/nvim-compe"}
+	use "hrsh7th/nvim-compe"
 
 	--telescope
 	use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim', module="plenary"}}}
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
 	----treesitter
-	use { 'nvim-treesitter/nvim-treesitter', config=require'nvim-treesitter.configs'.setup{highlight={enable=true}}}
+	use 'nvim-treesitter/nvim-treesitter'
 
 	--nvim_tree
 	use "kyazdani42/nvim-tree.lua"

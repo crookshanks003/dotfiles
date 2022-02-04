@@ -216,7 +216,7 @@ bindsym $mod+Escape mode "$mode_system"
 for_window [class="^.*"] border pixel 1
 
 exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id exec picom --config ~/dotfiles/compton.conf
+exec --no-startup-id exec picom --config ~/dotfiles/compton.conf
 exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/crookshanks/dotfiles/Wallpapers/cypher.jpg'
 # exec --no-startup-id xautolock -time 15 -locker blurlock
 exec --no-startup-id conky

@@ -130,5 +130,13 @@ require('formatter').setup({
 				}
 			end
 		},
+		go = {
+			function()
+				return {
+					exe = "gofmt "..vim.api.nvim_buf_get_name(0),
+					stdin = true
+				}
+			end
+		},
 	}
 })
