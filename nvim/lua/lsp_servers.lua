@@ -2,6 +2,10 @@ local nvim_lsp = require'lspconfig'
 local lsp_config = require"lsp_config"
 local data = vim.fn.stdpath('data')
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+local cmp_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 
 --lua
 local lua_dir = data.."/language-servers/lua-language-server"
@@ -9,6 +13,7 @@ local lua_binary = lua_dir.."/bin/lua-language-server"
 
 nvim_lsp.sumneko_lua.setup {
 	cmd = {lua_binary, "-E", lua_dir .. "/main.lua"},
+	capabilities = cmp_capabilities,
 	on_attach= lsp_config.on_attach_common,
 	settings = {
 		Lua = {
@@ -32,36 +37,22 @@ nvim_lsp.sumneko_lua.setup {
 --tsserver
 nvim_lsp.tsserver.setup{
 	on_attach = lsp_config.on_attach_common,
+	capabilities = cmp_capabilities,
 	init_options = {
 		formatting = false,
 	}
 }
-
---jsonls
-require'lspconfig'.jsonls.setup{
-	on_attach = lsp_config.on_attach_common,
-}
-
-
---pyright
-nvim_lsp.pyright.setup{
-	on_attach = lsp_config.on_attach_common
-}
-
 
 --cpp
 nvim_lsp.clangd.setup{
 	on_attach = lsp_config.on_attach_common,
+	capabilities = cmp_capabilities,
 	init_options = {
 		formatting = false,
 	}
 }
 
-
 --html
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 require'lspconfig'.html.setup{
 	init_options = {
 		configurationSection = { "html", "css", "javascript" },
@@ -70,23 +61,21 @@ require'lspconfig'.html.setup{
 			javascript = true
 		}
 	},
-	capabilities = capabilities,
+	capabilities = cmp_capabilities,
 	on_attach = lsp_config.on_attach_common
 }
-
 
 --css
 nvim_lsp.cssls.setup{
-	capabilities = capabilities,
+	capabilities = cmp_capabilities,
 	on_attach = lsp_config.on_attach_common
 }
 
---rust-analyzer
-nvim_lsp.rust_analyzer.setup{
-	on_attach = lsp_config.on_attach_common
-}
-
---gopls
-nvim_lsp.gopls.setup {
-	on_attach = lsp_config.on_attach_common
-}
+--go, rust, python, json
+local servers = {"gopls", "rust_analyzer", "pyright", "jsonls"}
+for _, lsp in pairs(servers) do
+	nvim_lsp[lsp].setup {
+		capabilities = cmp_capabilities,
+		on_attach = lsp_config.on_attach_common,
+	}
+end

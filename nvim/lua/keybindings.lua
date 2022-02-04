@@ -35,42 +35,6 @@ M.default_bindings = function()
 	map('n', '<C-h>', "<cmd>Telescope oldfiles<CR>", {noremap=true})
 	map('n', '<C-f>', ":Telescope grep_string search=", {noremap=true})
 
-	--nvim-compe
-	local t = function(str)
-		return vim.api.nvim_replace_termcodes(str, true, true, true)
-	end
-
-	local check_back_space = function()
-		local col = vim.fn.col('.') - 1
-		return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
-	end
-	_G.tab_complete = function()
-		if vim.fn.pumvisible() == 1 then
-			return t "<C-n>"
-		-- elseif vim.fn['vsnip#available'](1) == 1 then
-		-- 	return t "<Plug>(vsnip-expand-or-jump)"
-		elseif check_back_space() then
-			return t "<Tab>"
-		else
-			return vim.fn['compe#complete']()
-		end
-	end
-	_G.s_tab_complete = function()
-		if vim.fn.pumvisible() == 1 then
-			return t "<C-p>"
-		-- elseif vim.fn['vsnip#jumpable'](-1) == 1 then
-		-- 	return t "<Plug>(vsnip-jump-prev)"
-		else
-			return t "<S-Tab>"
-		end
-	end
-
-	map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-	map("i", "<S-Tab>", "v:lua.s_tab_complete()", {noremap=true,expr = true})
-	map('i', '<CR>', "compe#confirm('<CR>')", {noremap=true,silent=true, expr=true})
-	map('i', '<C-Space>', "compe#complete()", {noremap=true,silent=true, expr=true})
-	map('i', '<C-e>', "compe#close('<C-e>')", {noremap=true, silent=true, expr=true})
-
 	--QuickfixList
 	map('n','<C-j>', ':cn <CR>', {noremap=true})
 	map('n','<C-k>', ':cp <CR>', {noremap=true})
@@ -114,13 +78,14 @@ end
 
 --LSP
 M.lsp_bindings = function()
+	map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap=true, silent=true })
 	map('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>', {noremap=true})
 	map('n','K','<cmd>lua vim.lsp.buf.hover()<CR>', {noremap=true})
 	map('n','gr','<cmd>lua vim.lsp.buf.references()<CR>', {noremap=true})
 	map('n','<M-i>','<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap=true})
 	map('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>', {noremap=true})
-	map('n','gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', {noremap=true})
-	map('n','gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap=true})
+	map('n','gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap=true})
+	map('n','gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap=true})
 	map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', {noremap=true})
 end
 
