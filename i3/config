@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Iosevka Term 11
+font pango:Iosevka Term 8
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:Iosevka Term 7
@@ -41,8 +41,8 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/dotfiles/i3/brightness.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/dotfiles/i3/brightness.sh down
 
 bindsym --release $mod+x exec --no-startup-id import -silent ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
 bindsym --release $mod+y exec --no-startup-id import -silent -window root ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
@@ -260,6 +260,6 @@ client.urgent           $red                $red               $text-color      
 
 hide_edge_borders smart
 
-gaps inner 14
-gaps outer -2
+gaps inner 10
+gaps outer -4
 smart_gaps on

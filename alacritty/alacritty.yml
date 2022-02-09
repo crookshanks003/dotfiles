@@ -1,4 +1,3 @@
-background_opacity: 0.92
 colors:
   # Default colors
   primary:
@@ -64,12 +63,9 @@ font:
     x: 0
     y: 0
 window:
-  #   # Maximum number of lines in the scrollback buffer.
-  #   # Specifying '0' will disable scrolling.
+  opacity: 0.92
   history: 10000
-  #   # Number of lines the viewport will move for every line scrolled when
-  #   # scrollback is enabled (history > 0).
-  #   multiplier: 10
+  multiplier: 10
   padding:
       x: 5
       y: 0
