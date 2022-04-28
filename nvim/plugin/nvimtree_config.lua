@@ -1,19 +1,5 @@
 
--- g.nvim_tree_side = "left"
--- g.nvim_tree_width = 30
--- g.nvim_tree_auto_open = 0
--- g.nvim_tree_auto_close = 1
--- g.nvim_tree_quit_on_open = 0
--- g.nvim_tree_follow = 1
-vim.g.nvim_tree_indent_markers = 1
--- g.nvim_tree_git_hl = 0
 vim.g.nvim_tree_root_folder_modifier = ":~"
--- g.nvim_tree_tab_open = 0
--- g.nvim_tree_allow_resize = 1
--- g.nvim_tree_update_cwd = 1
--- g.nvim_tree_lsp_diagnostics = 0
--- g.nvim_tree_auto_ignore_ft = {'startify', 'dashboard'}
--- g.nvim_tree_disable_default_keybindings = 1
 
 vim.g.nvim_tree_show_icons = {
 	git = 0,
@@ -41,16 +27,21 @@ require"nvim-tree".setup{
 	hijack_netrw        = true,
 	open_on_setup       = false,
 	ignore_ft_on_setup  = {"startify", "dashboard"},
-	auto_close          = true,
 	open_on_tab         = false,
 	hijack_cursor       = false,
 	update_cwd          = false,
-	nvim_tree_hide_dotfiles = 1,
-	nvim_tree_ignore = {".git", "node_modules", ".cache"},
 	update_focused_file = {
 		enable      = true,
 		update_cwd  = false,
 		ignore_list ={"startify", "dashboard"}
+	},
+	git = {
+		enable = true,
+		ignore = true,
+		timeout = 400,
+	},
+	filters = {
+		dotfiles = true,
 	},
 	system_open = {
 		cmd  = nil,
@@ -60,7 +51,6 @@ require"nvim-tree".setup{
 	view = {
 		width = 30,
 		side = 'left',
-		auto_resize = false,
 		mappings = {
 			custom_only = true,
 			list = {

@@ -228,5 +228,7 @@
     "vim.enableNeovim": true,
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    "svelte.enable-ts-plugin": true,
+    "editor.cursorBlinking": "solid"
 }

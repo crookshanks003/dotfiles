@@ -1,0 +1,37 @@
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set smartindent
+set ignorecase
+set smartcase
+set relativenumber
+set nu
+set nohlsearch
+set hidden
+set incsearch
+set scrolloff=8
+set nowrap
+set ideajoin
+set guicursor=a:block
+
+let mapleader = " "
+nmap <S-l> $
+nmap <S-h> ^
+noremap <C-x> :bd<CR>
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>v :wincmd v<CR>
+nnoremap <tab> :action NextTab<cr>
+nnoremap <leader><tab> :action PreviousTab<cr>
+vnoremap <leader>y "+y
+nnoremap  <leader>p "_dP
+vnoremap <leader>c "+y
+
+nmap gn :action GotoNextError<cr>
+nmap gp :action GotoPreviousError<cr>
+nmap gf :action GotoFile<cr>
+nmap gc :action GotoClass<cr>
+noremap gi :action GotoImplementation<CR>
