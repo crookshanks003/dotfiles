@@ -97,13 +97,23 @@ fi
 #
 # Example aliases
 # alias .zsh="nvim ~/.zshrc"
+
+#Java and android
 export NVM_DIR="$HOME/.nvm"
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk/
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+#node and nvm
+export NODE_PATH=/usr/lib/node_modules
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$(yarn global bin):$PATH"
 export PATH="/var/lib/snapd/snap/bin:$PATH"
 
+
+#conf command for quick config
 conf(){
 	CURRENT=$(pwd)
 	case $1 in
@@ -123,32 +133,36 @@ conf(){
 }
 
 alias vim="nvim"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#lcale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
 export BAT_THEME="ansi-dark"
-export NODE_PATH=/usr/lib/node_modules
+
+#Go
 export GOPATH=$HOME/go
 export GOROOT=/usr/lib/go
 export PATH=$PATH:$GOPATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-bindkey -s ^f "tmux-sessionizer\n"
 
 alias luamake=/home/pritesh/.local/share/nvim/language-servers/lua-language-server/3rd/luamake/luamake
 
-#tmux alias
+#tmux
 alias ta="tmux a"
 alias tk="tmux kill-session"
 alias tks="tmux kill-server"
 
+bindkey -s ^f "tmux-sessionizer\n"
+
+# gpg stuff
 GPG_TTY=$(tty)
 export GPG_TTY
 export GCM_CREDENTIAL_STORE="gpg"
 
-# The next line updates PATH for the Google Cloud SDK.
+#google-cloud-sdk
 if [ -f '/home/pritesh/packages/google-cloud-sdk-365.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/pritesh/packages/google-cloud-sdk-365.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
 if [ -f '/home/pritesh/packages/google-cloud-sdk-365.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/pritesh/packages/google-cloud-sdk-365.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi
