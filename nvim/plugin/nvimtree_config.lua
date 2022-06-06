@@ -1,25 +1,3 @@
-
-vim.g.nvim_tree_root_folder_modifier = ":~"
-
-vim.g.nvim_tree_show_icons = {
-	git = 0,
-	folders = 1,
-	files = 1,
-	folder_arrows = 1
-}
-
-vim.g.nvim_tree_icons = {
-	default = '',
-	symlink = '',
-	folder = {
-		default = "",
-		open = "",
-		empty = "",
-		empty_open = "",
-		symlink = ""
-	}
-}
-
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 require"nvim-tree".setup{
@@ -60,7 +38,7 @@ require"nvim-tree".setup{
 				{ key = "r",                            cb = tree_cb("full_rename") },
 				{ key = "h",                            cb = tree_cb("split")},
 				{ key = "v",                            cb = tree_cb("vsplit")},
-				{ key = "I",                            cb = tree_cb("toggle_ignored") },
+				{ key = "I",                            cb = tree_cb("toggle_git_ignored") },
 				{ key = "H",                            cb = tree_cb("toggle_dotfiles") },
 				{ key = "R",                            cb = tree_cb("refresh") },
 				{ key = "<BS>",                         cb = tree_cb("dir_up") },

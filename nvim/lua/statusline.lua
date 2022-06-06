@@ -35,7 +35,7 @@ M.get_mode = function(self)
 end
 
 M.get_git_branch = function()
-	local git_branch = vim.fn["fugitive#head"]()
+	local git_branch = vim.fn["FugitiveHead"]()
 	local width = vim.api.nvim_win_get_width(0)
 	if width<80 then
 		return""
