@@ -1,5 +1,3 @@
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-
 require"nvim-tree".setup{
 	disable_netrw       = true,
 	hijack_netrw        = true,
@@ -21,6 +19,36 @@ require"nvim-tree".setup{
 	filters = {
 		dotfiles = true,
 	},
+	renderer = {
+		highlight_git = true,
+		icons = {
+			webdev_colors = true,
+			git_placement = "before",
+			padding = " ",
+			symlink_arrow = " ➛ ",
+			show = {
+				file = true,
+				folder = true,
+				folder_arrow = true,
+				git = false,
+			},
+			glyphs = {
+				default = "",
+				symlink = "",
+				folder = {
+					arrow_closed = "",
+					arrow_open = "",
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+					symlink_open = "",
+				},
+			},
+		},
+		special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+	},
 	system_open = {
 		cmd  = nil,
 		args = {}
@@ -32,18 +60,24 @@ require"nvim-tree".setup{
 		mappings = {
 			custom_only = true,
 			list = {
-				{ key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
-				{ key = "n",                            cb = tree_cb("create") },
-				{ key = "d",                            cb = tree_cb("remove") },
-				{ key = "r",                            cb = tree_cb("full_rename") },
-				{ key = "h",                            cb = tree_cb("split")},
-				{ key = "v",                            cb = tree_cb("vsplit")},
-				{ key = "I",                            cb = tree_cb("toggle_git_ignored") },
-				{ key = "H",                            cb = tree_cb("toggle_dotfiles") },
-				{ key = "R",                            cb = tree_cb("refresh") },
-				{ key = "<BS>",                         cb = tree_cb("dir_up") },
-				{ key = {"<C-]>"},                      cb = tree_cb("cd") },
+				{ key = {"<CR>", "o", "<2-LeftMouse>"}, action = "edit"},
+				{ key = "n",                            action = "create"},
+				{ key = "d",                            action = "remove"},
+				{ key = "r",                            action = "full_rename"},
+				{ key = "h",                            action = "split"},
+				{ key = "v",                            action = "vsplit"},
+				{ key = "I",                            action = "toggle_git_ignored"},
+				{ key = "H",                            action = "toggle_dotfiles"},
+				{ key = "R",                            action = "refresh"},
+				{ key = "f",                            action = "live_filter" },
+				{ key = "F",                            action = "clear_live_filter" },
+				{ key = "<BS>",                         action = "dir_up"},
+				{ key = {"<C-]>"},                      action = "cd"},
 			}
 		}
-	}
+	},
+	live_filter = {
+		prefix = "> ",
+		always_show_folders = true,
+	},
 }
