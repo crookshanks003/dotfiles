@@ -43,6 +43,8 @@ conf(){
 			cd ~/.config/alacritty && nvim alacritty.yml;;
 		"tmux")
 			nvim ~/.config/tmux/tmux.conf;;
+		"kitty")
+			nvim ~/.config/kitty;;
 	esac
 	cd $CURRENT
 }
@@ -68,9 +70,8 @@ alias luamake=/home/pritesh/.local/share/nvim/language-servers/lua-language-serv
 
 #tmux
 alias ta="tmux a"
-alias tk="tmux kill-session"
+alias tk="tmux kill-session" 
 alias tks="tmux kill-server"
-
 bindkey -s ^f "tmux-sessionizer\n"
 
 # gpg stuff

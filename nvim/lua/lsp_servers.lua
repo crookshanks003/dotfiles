@@ -70,6 +70,7 @@ nvim_lsp.cssls.setup{
 	capabilities = cmp_capabilities,
 	on_attach = lsp_config.on_attach_common
 }
+nvim_lsp.tailwindcss.setup{}
 
 --go, rust, python, json
 local servers = {"gopls", "rust_analyzer", "pyright", "jsonls"}

@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
 	--compe
 	-- use "hrsh7th/nvim-compe"
 
+	--emmet
+	use "mattn/emmet-vim"
+
 	--cmp
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
