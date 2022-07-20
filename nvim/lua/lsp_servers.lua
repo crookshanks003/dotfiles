@@ -80,3 +80,9 @@ for _, lsp in pairs(servers) do
 		on_attach = lsp_config.on_attach_common,
 	}
 end
+
+--solidity
+require'lspconfig'.solc.setup{
+	capabilities = cmp_capabilities,
+	on_attach = lsp_config.on_attach_common,
+}

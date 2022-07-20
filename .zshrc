@@ -70,6 +70,7 @@ alias luamake=/home/pritesh/.local/share/nvim/language-servers/lua-language-serv
 
 #tmux
 alias ta="tmux a"
+alias td="tmux detach-client"
 alias tk="tmux kill-session" 
 alias tks="tmux kill-server"
 bindkey -s ^f "tmux-sessionizer\n"

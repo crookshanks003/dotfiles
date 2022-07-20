@@ -51,7 +51,7 @@ bindsym --release $mod+y exec --no-startup-id import -silent -window root ~/Pict
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 
 bindsym $mod+b exec brave
@@ -217,7 +217,7 @@ for_window [class="^.*"] border pixel 1
 
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id exec picom --config ~/dotfiles/compton.conf
-exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/crookshanks/dotfiles/Wallpapers/cypher.jpg'
+exec_always --no-startup-id exec feh --no-fehbg --bg-fill '/home/crookshanks/dotfiles/Wallpapers/space.jpg'
 # exec --no-startup-id xautolock -time 15 -locker blurlock
 exec --no-startup-id conky
 

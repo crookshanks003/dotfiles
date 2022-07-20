@@ -50,4 +50,7 @@ return require('packer').startup(function(use)
 	--auto-pairs
 	use{"windwp/nvim-autopairs"}
 
+	--gitsigns
+	use{"lewis6991/gitsigns.nvim"}
+
 end)

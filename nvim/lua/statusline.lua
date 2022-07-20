@@ -43,7 +43,7 @@ M.get_git_branch = function()
 	if not git_branch or git_branch == "" then
 		git_branch = 'no git'
 	end
-	return "  "..git_branch
+	return "  "..string.sub(git_branch, 1, 12)
 end
 
 M.get_filename = function ()
