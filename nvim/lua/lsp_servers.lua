@@ -70,19 +70,13 @@ nvim_lsp.cssls.setup{
 	capabilities = cmp_capabilities,
 	on_attach = lsp_config.on_attach_common
 }
-nvim_lsp.tailwindcss.setup{}
+-- nvim_lsp.tailwindcss.setup{}
 
 --go, rust, python, json
-local servers = {"gopls", "rust_analyzer", "pyright", "jsonls"}
+local servers = {"gopls", "rust_analyzer", "pyright", "jsonls", "solc", "sqls"}
 for _, lsp in pairs(servers) do
 	nvim_lsp[lsp].setup {
 		capabilities = cmp_capabilities,
 		on_attach = lsp_config.on_attach_common,
 	}
 end
-
---solidity
-require'lspconfig'.solc.setup{
-	capabilities = cmp_capabilities,
-	on_attach = lsp_config.on_attach_common,
-}

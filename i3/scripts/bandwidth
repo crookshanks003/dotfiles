@@ -71,7 +71,7 @@ tx_rate=$(( $tx_diff / $time_diff ))
 
 echo "connected"
 
-# incoming
+# # incoming
 # echo -n "IN "
 # rx_kib=$(( $rx_rate >> 10 ))
 # if [[ "$rx_rate" -gt 1048576 ]]; then

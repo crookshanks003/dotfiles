@@ -31,7 +31,7 @@ local icons = {
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body)
+			require('luasnip').lsp_expand(args.body)
 		end,
 	},
 	completion = {
@@ -44,16 +44,18 @@ cmp.setup({
 		max_menu_width = 100;
 	},
 	sources = {
+		{name = 'luasnip' },
 		{name = 'nvim_lsp'},
-		{name = 'buffer'},
 		{name = 'path'},
-		{name = 'vsnip' },
+		{name = 'buffer', keyword_length=4},
 	},
 	mapping = {
 		['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
 		['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
 		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 		['<CR>'] = cmp.mapping.confirm({ select = true }),
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
 	},
 	formatting = {
 		format = function(_, vim_item)

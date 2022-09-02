@@ -14,11 +14,16 @@ set scrolloff=8
 set nowrap
 set ideajoin
 set guicursor=a:block
+set surround
+set NERDTree
+set multiple-cursors
 
 let mapleader = " "
-nmap <S-l> $
-nmap <S-h> ^
+map <S-l> $
+map <S-h> ^
 noremap <C-x> :bd<CR>
+nmap <C-x> :action CloseContent<cr>
+nmap <C-S-x> :action ReopenClosedTab<cr>
 nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l
 nnoremap <leader>j <C-w>j
@@ -27,8 +32,12 @@ nnoremap <leader>v :wincmd v<CR>
 nnoremap <tab> :action NextTab<cr>
 nnoremap <leader><tab> :action PreviousTab<cr>
 vnoremap <leader>y "+y
-nnoremap  <leader>p "_dP
+nnoremap <leader>p "_dP
 vnoremap <leader>c "+y
+nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>r :action RenameElement<cr>
+vmap <a-k> :action MoveLineUp<cr>
+vmap <a-j> :action MoveLineDown<cr>
 
 nmap gn :action GotoNextError<cr>
 nmap gp :action GotoPreviousError<cr>

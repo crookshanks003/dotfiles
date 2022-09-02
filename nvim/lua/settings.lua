@@ -5,7 +5,6 @@ vim.cmd "set shortmess+=c"
 --colorscheme--
 vim.cmd 'colorscheme gruvbox'
 vim.cmd 'au VimEnter * hi Normal guibg=NONE ctermbg=NONE'
-vim.cmd 'au VimEnter * highlight Comment cterm=italic gui=italic'
 
 --opts--
 vim.o.completeopt = "menuone,noselect"
@@ -35,6 +34,7 @@ vim.o.termguicolors= true
 vim.opt.wildignore = "__pycache__"
 vim.opt.wildignore = vim.opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
 vim.opt.guicursor = "a:block"
+vim.opt.mouse=""
 
 -- remove trailing whitespaces
 -- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])

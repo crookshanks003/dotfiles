@@ -3,7 +3,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	--colorschemes
-	use "gruvbox-community/gruvbox"
+	use "ellisonleao/gruvbox.nvim"
 
 	--comment
 	use "tpope/vim-commentary"
@@ -28,8 +28,10 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-vsnip'
-	use 'hrsh7th/vim-vsnip'
+
+	--snippet
+	use'L3MON4D3/LuaSnip'
+	use'saadparwaiz1/cmp_luasnip'
 
 	--telescope
 	use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim', module="plenary"}}}

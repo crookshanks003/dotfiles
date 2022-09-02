@@ -17,14 +17,14 @@ M.config = function()
 	)
 
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-	vim.lsp.diagnostic.on_publish_diagnostics, {
-		virtual_text = {
-			prefix = "ﱢ",
-			spacing = 1,
-		},
-		signs = true,
-		underline = false,
-	}
+		vim.lsp.diagnostic.on_publish_diagnostics, {
+			virtual_text = {
+				prefix = "ﱢ",
+				spacing = 1,
+			},
+			signs = true,
+			underline = false,
+		}
 	)
 
 	vim.lsp.protocol.CompletionItemKind = {
@@ -55,7 +55,6 @@ M.config = function()
 		"   (TypeParameter)"
 	}
 end
-
 
 --lsp_servers on_attach
 M.on_attach_common = function()

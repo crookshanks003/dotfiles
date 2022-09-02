@@ -1,3 +1,5 @@
+local utils = require('formatter.util')
+
 local filetypes = {
 	rust = {
 		function()
@@ -27,7 +29,8 @@ for _, type in pairs(js) do
 				return {
 					exe = "prettier",
 					args = {
-						"--stdin-filepath", vim.api.nvim_buf_get_name(0),
+						'--config-precedence', 'prefer-file',
+						"--stdin-filepath", utils.escape_path(vim.api.nvim_buf_get_name(0)),
 						'--single-quote=false',
 						'--tab-width', 4,
 						'--use-tabs',

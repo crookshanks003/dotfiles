@@ -15,6 +15,10 @@ if ($ENV{'BLOCK_BUTTON'} == 2) {
     system("playerctl $player_arg play-pause");
 } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
     system("playerctl $player_arg next");
+} elsif ($ENV{'BLOCK_BUTTON'} == 4) {
+    system("playerctl $player_arg volume 0.1+");
+} elsif ($ENV{'BLOCK_BUTTON'} == 5) {
+    system("playerctl $player_arg volume 0.1-");
 }
 
 

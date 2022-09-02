@@ -7,6 +7,10 @@ else
     selected=`echo "$items" | fzf`
 fi
 
+if [[ -z "$selected" ]]; then 
+	exit 0
+fi
+
 dirname=`basename $selected`
 name=${dirname:0:3}
 
@@ -14,5 +18,6 @@ tmux switch-client -t $name
 if [[ $? -eq 0 ]]; then
     exit 0
 fi
+
 
 tmux new-session -c $selected -d -s $name && tmux switch-client -t $name || tmux new -c $selected -A -s $name
