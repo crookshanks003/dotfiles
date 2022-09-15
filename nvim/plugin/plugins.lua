@@ -17,12 +17,6 @@ return require('packer').startup(function(use)
 	--lsp
 	use "neovim/nvim-lspconfig"
 
-	--compe
-	-- use "hrsh7th/nvim-compe"
-
-	--emmet
-	use "mattn/emmet-vim"
-
 	--cmp
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
@@ -54,5 +48,9 @@ return require('packer').startup(function(use)
 
 	--gitsigns
 	use{"lewis6991/gitsigns.nvim"}
+
+	--golang
+	use 'ray-x/go.nvim'
+	use 'ray-x/guihua.lua'
 
 end)

@@ -42,15 +42,3 @@ end, {silent=true})
 --snippets
 ls.add_snippets('typescript',{vs("cl", "console.log($1)")})
 ls.add_snippets('javascript',{vs("cl", "console.log($1)")})
-
-ls.add_snippets("go", {
-	s(
-		"ifer", fmt(
-			[[
-				if err != nil {{
-					{}
-				}}
-			]], {i(0)}
-		)
-	),
-})

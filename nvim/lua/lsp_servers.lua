@@ -53,7 +53,7 @@ nvim_lsp.clangd.setup{
 }
 
 --html
-require'lspconfig'.html.setup{
+nvim_lsp.html.setup{
 	init_options = {
 		configurationSection = { "html", "css", "javascript" },
 		embeddedLanguages = {
@@ -73,7 +73,7 @@ nvim_lsp.cssls.setup{
 -- nvim_lsp.tailwindcss.setup{}
 
 --go, rust, python, json
-local servers = {"gopls", "rust_analyzer", "pyright", "jsonls", "solc", "sqls"}
+local servers = {"rust_analyzer", "pyright", "jsonls", "solc"}
 for _, lsp in pairs(servers) do
 	nvim_lsp[lsp].setup {
 		capabilities = cmp_capabilities,

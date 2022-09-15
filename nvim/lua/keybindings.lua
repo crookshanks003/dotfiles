@@ -40,7 +40,7 @@ M.default_bindings = function()
 	map('n','<C-k>', ':cp <CR>', {noremap=true})
 	map('n','<M-j>', ':lnext <CR>', {noremap=true})
 	map('n','<M-k>', ':lprev <CR>', {noremap=true})
-	map('n','<C-q>', ':lua require"keybindings".toggle_Qf_list(1)<CR>', {noremap=true})
+	map('n','<C-q>', ':lua require"keybindings".toggle_Qf_list()<CR>', {noremap=true})
 
 	--Buffers
 	map('n', '<A-1>', ':BufferGoto 1<CR>', {noremap=true, silent=true})
@@ -72,6 +72,7 @@ M.default_bindings = function()
 	map("n", '<leader>gb', ":Git blame<CR>", {noremap=true})
 	map('n', '<leader>gf', ":diffget //2 <CR>", {noremap=true})
 	map('n', '<leader>gh', ":diffget //3 <CR>", {noremap=true})
+	map("n", '<leader>gl', ":0Gclog<CR>", {noremap=true})
 
 end
 
@@ -86,7 +87,16 @@ M.lsp_bindings = function()
 	map('n','<leader>r','<cmd>lua vim.lsp.buf.rename()<CR>', {noremap=true})
 	map('n','gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap=true})
 	map('n','gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap=true})
-	map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', {noremap=true})
+	map('n', '<leader>q', '<cmd>lua vim.diagnostic.setqflist()<CR>', {noremap=true})
+end
+
+--Go
+M.go_bindings = function ()
+	map('n', '<leader>tf', '<cmd>GoTestFunc<CR>', { noremap=true, silent=true })
+	map('n', '<leader>tt', '<cmd>GoTest<CR>', { noremap=true, silent=true })
+	map('n', '<leader>tp', '<cmd>GoTestPackage<CR>', { noremap=true, silent=true })
+	map('n', '<leader>ta', '<cmd>GoAddTest<CR>', { noremap=true, silent=true })
+	map('n', '<leader>r', '<cmd>GoRename<CR>', { noremap=true, silent=true })
 end
 
 M.search_replace = function()
@@ -102,7 +112,7 @@ end
 
 _G.qf_g = 1
 
-M.toggle_Qf_list = function(global)
+M.toggle_Qf_list = function()
 	if qf_g ~= 0 then
 		_G.qf_g = 0
 		vim.cmd("cclose")

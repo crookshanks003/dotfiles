@@ -61,7 +61,8 @@ end
 M.get_lsp_status = function ()
 	local errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
     local hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
-    return string.format("E:%d  H:%d ", errors, hints)
+	hints = hints + #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+    return string.format("E:%d  W:%d ", errors, hints)
 end
 
 M.set_active = function(self)

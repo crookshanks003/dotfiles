@@ -1,20 +1,18 @@
 local M = {}
 
 M.config = function()
-	vim.fn.sign_define(
-		"LspDiagnosticsSignError", {texthl = "LspDiagnosticsSignError", text = ">>", numhl = "LspDiagnosticsSignError"}
-	)
+	vim.lsp.handlers["textDocument/definition"] = function(_, result)
+		if not result or vim.tbl_isempty(result) then
+			print "[LSP] Could not find definition"
+			return
+		end
 
-	vim.fn.sign_define(
-		"LspDiagnosticsSignWarning", {texthl = "LspDiagnosticsSignWarning", text = ">>", numhl = "LspDiagnosticsSignWarning"})
-
-	vim.fn.sign_define(
-		"LspDiagnosticsSignHint", {texthl = "LspDiagnosticsSignHint", text = ">>", numhl = "LspDiagnosticsSignHint"}
-	)
-
-	vim.fn.sign_define(
-		"LspDiagnosticsSignInformation", {texthl = "LspDiagnosticsSignInformation", text = ">>", numhl = "LspDiagnosticsSignInformation"}
-	)
+		if vim.tbl_islist(result) then
+			vim.lsp.util.jump_to_location(result[1], "utf-8")
+		else
+			vim.lsp.util.jump_to_location(result, "utf-8")
+		end
+	end
 
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -26,34 +24,6 @@ M.config = function()
 			underline = false,
 		}
 	)
-
-	vim.lsp.protocol.CompletionItemKind = {
-		"   (Text) ",
-		"   (Method)",
-		"   (Function)",
-		"   (Constructor)",
-		" ﴲ  (Field)",
-		"  (Variable)",
-		"   (Class)",
-		" ﰮ  (Interface)",
-		"   (Module)",
-		" 襁 (Property)",
-		"   (Unit)",
-		"   (Value)",
-		" 練 (Enum)",
-		"   (Keyword)",
-		"   (Snippet)",
-		"   (Color)",
-		"   (File)",
-		"   (Reference)",
-		"   (Folder)",
-		"   (EnumMember)",
-		" ﲀ  (Constant)",
-		" ﳤ  (Struct)",
-		"   (Event)",
-		"   (Operator)",
-		"   (TypeParameter)"
-	}
 end
 
 --lsp_servers on_attach
