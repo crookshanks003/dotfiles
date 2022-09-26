@@ -1,3 +1,5 @@
+local keybindings = require("keybindings")
+
 require('gitsigns').setup{
 signs = {
     add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
@@ -7,4 +9,5 @@ signs = {
     changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
   },
   attach_to_untracked = false,
+  on_attach = keybindings.gitsigns_binding
 }

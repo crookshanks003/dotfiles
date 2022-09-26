@@ -12,6 +12,8 @@ else
   export EDITOR='nvim'
 fi
 
+#local bin
+export PATH="/home/crookshanks/.local/bin/:$PATH"
 
 #Java and android
 export NVM_DIR="$HOME/.nvm"
@@ -36,6 +38,8 @@ conf(){
 			nvim ~/.zshrc
 			;;
 		"nvim")
+			cd ~/.config/nvim && nvim init.lua;;
+		"vim")
 			cd ~/.config/nvim && nvim init.lua;;
 		"i3")
 			cd ~/.config/i3 && nvim config;;
@@ -74,6 +78,8 @@ alias td="tmux detach-client"
 alias tk="tmux kill-session" 
 alias tks="tmux kill-server"
 bindkey -s ^f "tmux-sessionizer\n"
+alias glis="tmux-sessionizer ~/proj/drife/glis-go/"
+alias api="tmux-sessionizer ~/proj/drife/api.drife.io/"
 
 # gpg stuff
 GPG_TTY=$(tty)

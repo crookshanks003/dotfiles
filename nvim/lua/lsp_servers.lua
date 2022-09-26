@@ -80,3 +80,5 @@ for _, lsp in pairs(servers) do
 		on_attach = lsp_config.on_attach_common,
 	}
 end
+
+-- nvim_lsp.golangci_lint_ls.setup{}

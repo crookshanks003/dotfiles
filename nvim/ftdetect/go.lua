@@ -1,3 +1,1 @@
-local k = require("keybindings")
-
-k.go_bindings()
+require("keybindings").go_bindings()

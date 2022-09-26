@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
 
 	----treesitter
 	use 'nvim-treesitter/nvim-treesitter'
+	use 'nvim-treesitter/nvim-treesitter-context'
 
 	--nvim_tree
 	use "kyazdani42/nvim-tree.lua"
@@ -41,7 +42,9 @@ return require('packer').startup(function(use)
 	use "mhartington/formatter.nvim"
 
 	--bufferline
-	use { 'romgrk/barbar.nvim', requires={"kyazdani42/nvim-web-devicons", module="nvim-web-devicons"}}
+	use 'romgrk/barbar.nvim'
+	--icons
+	use "kyazdani42/nvim-web-devicons"
 
 	--auto-pairs
 	use{"windwp/nvim-autopairs"}

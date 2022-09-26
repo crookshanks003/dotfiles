@@ -41,8 +41,8 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/dotfiles/i3/brightness.sh up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/dotfiles/i3/brightness.sh down
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/brightness.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/brightness.sh down
 
 bindsym --release $mod+x exec --no-startup-id import -silent ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
 bindsym --release $mod+y exec --no-startup-id import -silent -window root ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png

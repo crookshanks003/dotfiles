@@ -21,7 +21,7 @@ vim.o.hlsearch= false
 vim.o.incsearch= true
 vim.o.hidden= true
 vim.o.errorbells= false
-vim.o.ignorecase= true
+vim.o.ignorecase= false
 vim.o.smartcase= true
 vim.o.backup= false
 vim.o.undofile= true
@@ -40,3 +40,8 @@ vim.opt.mouse=""
 -- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 -- remove trailing newline
 vim.cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])
+-- highlight yanked
+vim.cmd([[augroup highlight_yank
+	autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=80 }
+augroup END]])

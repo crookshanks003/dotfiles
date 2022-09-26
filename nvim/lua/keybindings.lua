@@ -1,5 +1,9 @@
 local M = {}
-local map = vim.api.nvim_set_keymap
+
+local function map(mode, l, r, opts)
+	opts = opts or {}
+	vim.keymap.set(mode, l, r, opts)
+end
 
 M.default_bindings = function()
 
@@ -70,12 +74,30 @@ M.default_bindings = function()
 	--fugitive
 	map('n', '<leader>gs', ":vertical G<CR> :vertical resize 30<CR>", {noremap=true})
 	map("n", '<leader>gb', ":Git blame<CR>", {noremap=true})
-	map('n', '<leader>gf', ":diffget //2 <CR>", {noremap=true})
-	map('n', '<leader>gh', ":diffget //3 <CR>", {noremap=true})
 	map("n", '<leader>gl', ":0Gclog<CR>", {noremap=true})
-
+	map('n', '<leader>g2', ":diffget //2 <CR>", {noremap=true})
+	map('n', '<leader>g3', ":diffget //3 <CR>", {noremap=true})
+	map('n', '<leader>gd', ":Gvdiffsplit<CR>")
 end
 
+--Gitsigns
+M.gitsigns_binding = function()
+	local gs = package.loaded.gitsigns
+	map('n', '<leader>gn', function()
+      if vim.wo.diff then return '<leader>gn' end
+      vim.schedule(function() gs.next_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+    map('n', '<leader>gp', function()
+      if vim.wo.diff then return '<leader>gp' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '<Ignore>'
+    end, {expr=true})
+
+	map({'v'}, '<leader>gs', ':Gitsigns stage_hunk<CR>')
+    map({'v'}, '<leader>gr', ':Gitsigns reset_hunk<CR>')
+end
 
 --LSP
 M.lsp_bindings = function()
@@ -92,12 +114,15 @@ end
 
 --Go
 M.go_bindings = function ()
+	M.lsp_bindings()
 	map('n', '<leader>tf', '<cmd>GoTestFunc<CR>', { noremap=true, silent=true })
 	map('n', '<leader>tt', '<cmd>GoTest<CR>', { noremap=true, silent=true })
-	map('n', '<leader>tp', '<cmd>GoTestPackage<CR>', { noremap=true, silent=true })
+	map('n', '<leader>tp', '<cmd>GoTestPkg<CR>', { noremap=true, silent=true })
 	map('n', '<leader>ta', '<cmd>GoAddTest<CR>', { noremap=true, silent=true })
-	map('n', '<leader>r', '<cmd>GoRename<CR>', { noremap=true, silent=true })
+	map('n', '<leader>tr', '<cmd>GoTest -n<CR>', { noremap=true, silent=true })
+	map('n', '<M-r>', '<cmd>GoRename<CR>', { noremap=true, silent=true })
 end
+
 
 M.search_replace = function()
 	local select = vim.fn.getreg("h")
