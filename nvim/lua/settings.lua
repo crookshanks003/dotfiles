@@ -37,7 +37,7 @@ vim.opt.guicursor = "a:block"
 vim.opt.mouse=""
 
 -- remove trailing whitespaces
--- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
+vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 -- remove trailing newline
 vim.cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])
 -- highlight yanked
@@ -45,3 +45,9 @@ vim.cmd([[augroup highlight_yank
 	autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=80 }
 augroup END]])
+-- filetype specific indents
+vim.cmd([[
+augroup FileTypeSpecificIndents
+    autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+augroup END
+]])

@@ -1,6 +1,6 @@
 export ZSH="/home/crookshanks/.oh-my-zsh"
 
-ZSH_THEME="awesomepanda"
+ZSH_THEME="robbyrussell"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
@@ -33,10 +33,10 @@ export PATH="/var/lib/snapd/snap/bin:$PATH"
 #conf command for quick config
 conf(){
 	CURRENT=$(pwd)
+	cd ~/dotfiles/
 	case $1 in
 		"zsh")
-			nvim ~/.zshrc
-			;;
+			nvim ~/.zshrc;;
 		"nvim")
 			cd ~/.config/nvim && nvim init.lua;;
 		"vim")
@@ -78,8 +78,6 @@ alias td="tmux detach-client"
 alias tk="tmux kill-session" 
 alias tks="tmux kill-server"
 bindkey -s ^f "tmux-sessionizer\n"
-alias glis="tmux-sessionizer ~/proj/drife/glis-go/"
-alias api="tmux-sessionizer ~/proj/drife/api.drife.io/"
 
 # gpg stuff
 GPG_TTY=$(tty)
