@@ -32,7 +32,6 @@ M.default_bindings = function()
 	map('n', '<C-t>', ':NvimTreeToggle<CR>', {noremap=true})
 
 	--Telescope
-	map('n', '<leader>fd', "<cmd>Telescope find_files cwd=~/dotfiles prompt_title=Dotfiles<CR>", {noremap=true})
 	map('n', '<C-p>', "<cmd>Telescope git_files<CR>", {noremap=true})
 	map('n', '<M-S-p>', "<cmd>Telescope find_files<CR>", {noremap=true})
 	map('n', '<C-b>', "<cmd>Telescope buffers<CR>", {noremap=true})
@@ -124,6 +123,8 @@ M.go_bindings = function ()
 	map('n', '<leader>ta', '<cmd>GoAddTest<CR>', { noremap=true, silent=true })
 	map('n', '<leader>tr', '<cmd>GoTest -n<CR>', { noremap=true, silent=true })
 	map('n', '<M-r>', '<cmd>GoRename<CR>', { noremap=true, silent=true })
+	map('n', '<leader>fs', '<cmd>GoFillStruct<CR>', { noremap=true, silent=true })
+	map('n', '<leader>fw', '<cmd>GoFillSwitch<CR>', { noremap=true, silent=true })
 end
 
 

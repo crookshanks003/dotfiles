@@ -17,8 +17,6 @@ return require('packer').startup(function(use)
 	--lsp
 	use "neovim/nvim-lspconfig"
 
-	--lint
-	use 'mfussenegger/nvim-lint'
 	--cmp
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
