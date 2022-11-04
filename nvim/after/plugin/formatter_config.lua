@@ -13,10 +13,6 @@ local filetypes = {
 	go = {
 		function()
 			require("go.format").goimport()
-			-- return {
-			-- 	exe = "gofmt "..vim.api.nvim_buf_get_name(0),
-			-- 	stdin = true
-			-- }
 		end
 	},
 };

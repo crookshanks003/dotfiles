@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
 	use "ellisonleao/gruvbox.nvim"
 
 	--comment
-	use "tpope/vim-commentary"
+	use "numToStr/Comment.nvim"
 
 	--fugitive
 	use "tpope/vim-fugitive"
@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
 	----treesitter
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'nvim-treesitter/nvim-treesitter-context'
+	use 'nvim-treesitter/nvim-treesitter-textobjects'
 
 	--nvim_tree
 	use "kyazdani42/nvim-tree.lua"
@@ -44,7 +45,7 @@ return require('packer').startup(function(use)
 	--bufferline
 	use 'romgrk/barbar.nvim'
 	--icons
-	use "kyazdani42/nvim-web-devicons"
+	use "nvim-tree/nvim-web-devicons"
 
 	--auto-pairs
 	use{"windwp/nvim-autopairs"}
