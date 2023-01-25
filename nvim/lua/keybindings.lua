@@ -27,6 +27,7 @@ M.default_bindings = function()
 	map("", "H", "^", {noremap=false})
 	map("", "L", "$", {noremap=false})
 	map('v' ,'<C-r>', '"hy:lua require"keybindings".search_replace()<CR>', {noremap=true })
+	map("n", "<C-e>", ":e .env<CR>", {noremap=false})
 
 	--NvimTree
 	map('n', '<C-t>', ':NvimTreeToggle<CR>', {noremap=true})

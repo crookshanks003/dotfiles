@@ -49,5 +49,7 @@ augroup END]])
 vim.cmd([[
 augroup FileTypeSpecificIndents
     autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 ]])

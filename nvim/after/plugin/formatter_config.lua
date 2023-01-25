@@ -1,4 +1,5 @@
 local utils = require('formatter.util')
+local conf = require('formatter.filetypes.python')
 
 local filetypes = {
 	rust = {
@@ -15,6 +16,7 @@ local filetypes = {
 			require("go.format").goimport()
 		end
 	},
+	python = require('formatter.filetypes.python').black
 };
 
 local js = {"javascript", "javascriptreact", "typescript", "typescriptreact", "json", "css", "html"}
