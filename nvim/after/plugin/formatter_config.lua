@@ -1,5 +1,5 @@
 local utils = require('formatter.util')
-local conf = require('formatter.filetypes.python')
+local ftypes = require('formatter.filetypes')
 
 local filetypes = {
 	rust = {
@@ -16,7 +16,7 @@ local filetypes = {
 			require("go.format").goimport()
 		end
 	},
-	python = require('formatter.filetypes.python').black
+	python = ftypes.python.black,
 };
 
 local js = {"javascript", "javascriptreact", "typescript", "typescriptreact", "json", "css", "html"}
@@ -30,7 +30,7 @@ for _, type in pairs(js) do
 					args = {
 						'--config-precedence', 'prefer-file',
 						"--stdin-filepath", utils.escape_path(vim.api.nvim_buf_get_name(0)),
-						'--single-quote=false',
+						'--single-quote=true',
 						'--tab-width', 4,
 						'--use-tabs',
 						'--print-width', 80,

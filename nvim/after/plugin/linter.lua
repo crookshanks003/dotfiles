@@ -1,5 +1,12 @@
-local linter_opts = {
-	name = 'golangci',
+local lint = require('lint')
+
+local js = {"javascript", "javascriptreact", "typescript", "typescriptreact"}
+for _, ft in pairs(js) do
+	lint.linters_by_ft[ft] = {'eslint'}
+end
+
+lint.linters.golang_linter = {
+	name = 'golang_linter',
 	cmd = 'golangci-lint',
 	append_fname = false,
 	args = {
@@ -40,9 +47,7 @@ local linter_opts = {
 	end
 }
 
-vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost" }, {
-	pattern={"*.go"},
-	callback = function()
-		require('linter').try_lint(linter_opts)
-	end,
-})
+lint.linters_by_ft = {
+	go = {'golang_linter'},
+	typescript = {'eslint'},
+}

@@ -3,7 +3,7 @@ local indent=4
 vim.cmd "set shortmess+=c"
 
 --colorscheme--
-vim.cmd 'colorscheme gruvbox'
+vim.cmd.colorscheme('gruvbox')
 vim.cmd 'au VimEnter * hi Normal guibg=NONE ctermbg=NONE'
 
 --opts--
@@ -45,11 +45,21 @@ vim.cmd([[augroup highlight_yank
 	autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=80 }
 augroup END]])
+
+--linter
+local lint_augroup = vim.api.nvim_create_augroup("Linter", {clear = true})
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost" }, {
+	group = lint_augroup,
+	pattern={"*.go", "*.ts", "*.tsx", "*.js", "*.jsx"},
+	callback = function()
+		require('lint').try_lint()
+	end,
+})
 -- filetype specific indents
-vim.cmd([[
-augroup FileTypeSpecificIndents
-    autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-augroup END
-]])
+-- vim.cmd([[
+-- augroup FileTypeSpecificIndents
+--     autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+--     autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+--     autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+-- augroup END
+-- ]])
