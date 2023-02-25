@@ -48,7 +48,7 @@ for _,type in pairs(c) do
 				exe = "clang-format",
 				args = {
 					"--assume-filename", vim.api.nvim_buf_get_name(0),
-					'-style="{ BasedOnStyle: LLVM, UseTab: Always, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true}"',
+					'-style="{ BasedOnStyle: LLVM, UseTab: Always, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: true, ColumnLimit: 120}"',
 				},
 				stdin = true,
 				cwd = vim.fn.expand('%:p:h')  -- Run clang-format in cwd of the file.

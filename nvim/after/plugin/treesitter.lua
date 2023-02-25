@@ -20,7 +20,8 @@ end)()
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {"javascript", "typescript", "tsx", "html", "css", "cpp", "lua", "json", "rust", "go"},
 	highlight = {
-		enable = true
+		enable = true,
+		additional_vim_regex_highlighting = false,
 	},
 	incremental_selection = {
 		enable = true,
@@ -34,9 +35,6 @@ require'nvim-treesitter.configs'.setup {
 	},
 	context_commentstring = {
 		enable = true,
-
-		-- With Comment.nvim, we don't need to run this on the autocmd.
-		-- Only run it in pre-hook
 		enable_autocmd = false,
 
 	},

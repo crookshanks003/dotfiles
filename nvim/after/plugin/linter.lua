@@ -50,4 +50,5 @@ lint.linters.golang_linter = {
 lint.linters_by_ft = {
 	go = {'golang_linter'},
 	typescript = {'eslint'},
+	typescriptreact = {'eslint'},
 }

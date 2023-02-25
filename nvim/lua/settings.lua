@@ -50,16 +50,16 @@ augroup END]])
 local lint_augroup = vim.api.nvim_create_augroup("Linter", {clear = true})
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost" }, {
 	group = lint_augroup,
-	pattern={"*.go", "*.ts", "*.tsx", "*.js", "*.jsx"},
+	pattern={"*.go", "*.js", "*.jsx"},
 	callback = function()
 		require('lint').try_lint()
 	end,
 })
 -- filetype specific indents
--- vim.cmd([[
--- augroup FileTypeSpecificIndents
---     autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
---     autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
---     autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
--- augroup END
--- ]])
+vim.cmd([[
+augroup FileTypeSpecificIndents
+    " autocmd FileType javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    autocmd FileType typescript setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+augroup END
+]])
