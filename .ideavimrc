@@ -22,8 +22,8 @@ let mapleader = " "
 map <S-l> $
 map <S-h> ^
 noremap <C-x> :bd<CR>
-nmap <C-x> :action CloseContent<cr>
-nmap <C-S-x> :action ReopenClosedTab<cr>
+nmap <C-x> <Action>(CloseContent)
+nmap <C-S-x> <Action>(ReopenClosedTab)
 nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l
 nnoremap <leader>j <C-w>j
@@ -35,12 +35,25 @@ vnoremap <leader>y "+y
 nnoremap <leader>p "_dP
 vnoremap <leader>c "+y
 nmap <leader>f :NERDTreeFind<CR>
-nmap <leader>r :action RenameElement<cr>
-vmap <a-k> :action MoveLineUp<cr>
-vmap <a-j> :action MoveLineDown<cr>
+nmap <leader>r <Action>(RenameElement)
+vmap <a-k> <Action>(MoveLineUp)
+vmap <a-j> <Action>(MoveLineDown)
 
-nmap gn :action GotoNextError<cr>
-nmap gp :action GotoPreviousError<cr>
-nmap gf :action GotoFile<cr>
-nmap gc :action GotoClass<cr>
-noremap gi :action GotoImplementation<CR>
+" goto stuff
+nmap gn <Action>(GotoNextError)
+nmap gp <Action>(GotoPreviousError)
+nmap gt <Action>(GotoTest)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(GotoRelated)
+
+" git
+nmap <leader>gr <Action>(ChangesView.Revert)
+vmap <leader>gr <Action>(Vcs.RevertSelectedChanges)
+nmap <leader>gn <Action>(VcsShowNextChangeMarker)
+nmap <leader>gp <Action>(VcsShowNextPrevMarker)
+
+" rails specific
+nmap <leader>rc <Action>(org.jetbrains.plugins.ruby.rails.actions.navigation.SwitchToController)
+nmap <leader>rv <Action>(org.jetbrains.plugins.ruby.rails.actions.navigation.SwitchToView)
+nmap <leader>rh <Action>(org.jetbrains.plugins.ruby.rails.actions.navigation.SwitchToHelper)
+nmap <leader>rm <Action>(Rails.SwitchToModel)

@@ -56,7 +56,7 @@ bindsym $mod+Return exec kitty
 
 bindsym $mod+b exec brave
 bindsym $mod+c exec codium
-bindsym $mod+Shift+s exec LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
+bindsym $mod+Shift+s exec LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify-launcher
 
 
 # kill focused window

@@ -52,7 +52,10 @@ M.get_git_branch = function()
 		local pre = string.sub(git_branch, 1, 1)
 		local e = string.find(git_branch, "_")
 		if e == nil then
-			e = 5
+			e = string.find(git_branch, "/")
+		end
+		if e == nil then
+			e = 8
 		end
 		git_branch = pre.."/"..string.sub(git_branch, e+1)
 	end
@@ -62,12 +65,7 @@ end
 M.get_filename = function ()
 	local file_name, file_ext = fn.expand("%:t"), fn.expand("%:e")
 	local icon = require'nvim-web-devicons'.get_icon(file_name, file_ext, { default = true })
-	local width = vim.api.nvim_win_get_width(0)
-	local filename = ""
-	if width<80 then
-		filename = vim.fn.fnamemodify(vim.fn.bufname(), ":t")
-	else filename = vim.fn.fnamemodify(vim.fn.bufname(), ":.")
-	end
+	local filename = vim.fn.fnamemodify(vim.fn.bufname(), ":p:t")
 	return icon.." "..filename.."%m"
 end
 

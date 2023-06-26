@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
 
 	--bufferline
 	use 'romgrk/barbar.nvim'
+
 	--icons
 	use "nvim-tree/nvim-web-devicons"
 
@@ -59,5 +60,12 @@ return require('packer').startup(function(use)
 	--golang
 	use 'ray-x/go.nvim'
 	use 'ray-x/guihua.lua'
+
+	--rails
+	use'tpope/vim-rails'
+	use 'tpope/vim-bundler'
+
+	--dap
+	use 'mfussenegger/nvim-dap'
 
 end)

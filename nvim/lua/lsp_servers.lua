@@ -11,7 +11,7 @@ local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lua_dir = data.."/language-servers/lua-language-server"
 local lua_binary = lua_dir.."/bin/lua-language-server"
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
 	cmd = {lua_binary, "-E", lua_dir .. "/main.lua"},
 	capabilities = cmp_capabilities,
 	on_attach= lsp_config.on_attach_common,
@@ -73,7 +73,7 @@ nvim_lsp.cssls.setup{
 -- nvim_lsp.tailwindcss.setup{}
 
 --go, rust, python, json
-local servers = {"rust_analyzer", "pyright", "jsonls", "solc"}
+local servers = {"rust_analyzer", "pyright", "jsonls", "solc", "solargraph"}
 for _, lsp in pairs(servers) do
 	nvim_lsp[lsp].setup {
 		capabilities = cmp_capabilities,

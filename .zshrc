@@ -29,6 +29,10 @@ export NODE_PATH=/usr/lib/node_modules
 export PATH="$(yarn global bin):$PATH"
 export PATH="/var/lib/snapd/snap/bin:$PATH"
 
+#ruby
+export RVM_DIR="$HOME/.rvm"
+export PATH="$RVM_DIR/bin:$PATH"
+[[ -s "$RVM_DIR/scripts/rvm" ]] && . "$RVM_DIR/scripts/rvm"
 
 #conf command for quick config
 conf(){
@@ -77,7 +81,7 @@ alias ta="tmux a"
 alias td="tmux detach-client"
 alias tk="tmux kill-session"
 alias tks="tmux kill-server"
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s "^f" "tmux-sessionizer\n"
 
 # gpg stuff
 GPG_TTY=$(tty)
@@ -87,3 +91,6 @@ export GCM_CREDENTIAL_STORE="gpg"
 #google-cloud-sdk
 if [ -f '/home/pritesh/packages/google-cloud-sdk-365.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/pritesh/packages/google-cloud-sdk-365.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/home/pritesh/packages/google-cloud-sdk-365.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/pritesh/packages/google-cloud-sdk-365.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

@@ -1,18 +1,34 @@
-vim.g.bufferline = {
+vim.g.barbar_auto_setup = false
+
+require'barbar'.setup {
 	animation = false,
 	auto_hide = false,
 	tabpages = true,
-	closable = false,
 	clickable = false,
-	icons = "both",
-	icon_custom_colors = false,
-	icon_separator_active = '▎',
-	icon_separator_inactive = '▎',
-	icon_close_tab = '',
-	icon_close_tab_modified = '●',
-	icon_pinned = '車',
+	icons = {
+		buffer_index = true,
+		buffer_number = false,
+		button = ' ',
+		-- Enables / disables diagnostic symbols
+		diagnostics = {
+			[vim.diagnostic.severity.ERROR] = {enabled = false, icon = 'ﬀ'},
+			[vim.diagnostic.severity.WARN] = {enabled = false},
+			[vim.diagnostic.severity.INFO] = {enabled = false},
+			[vim.diagnostic.severity.HINT] = {enabled = false},
+		},
+		separator = {left = '▎', right = ''},
+
+		modified = {button = ' '},
+		pinned = {button = '車', filename = true, separator = {right = ''}},
+
+		alternate = {filetype = {enabled = false}},
+		current = {buffer_index = true},
+		inactive = {button = ''},
+		visible = {modified = {buffer_number = false}},
+	},
 	insert_at_end = false,
-	maximum_padding = 1,
+	minimum_padding = 1,
+	maximum_padding = 3,
 	maximum_length = 30,
 	semantic_letters = true,
 	letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',

@@ -110,7 +110,6 @@ M.lsp_bindings = function()
 	map('n','gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap=true})
 	map('n','gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap=true})
 	map('n', '<leader>q', '<cmd>lua vim.diagnostic.setqflist()<CR>', {noremap=true})
-	map('n', '<C-k>', vim.lsp.buf.signature_help, {noremap=true})
 	map('n', '<space>D', vim.lsp.buf.type_definition, {noremap=true})
 end
 

@@ -36,6 +36,11 @@ vim.opt.wildignore = vim.opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
 vim.opt.guicursor = "a:block"
 vim.opt.mouse=""
 
+vim.cmd([[imap <silent><script><expr> <C-]> copilot#Accept("\<CR>")
+        let g:copilot_no_tab_map = v:true
+		highlight CopilotSuggestion guifg=#504945 ctermfg=8
+		]])
+
 -- remove trailing whitespaces
 vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 -- remove trailing newline

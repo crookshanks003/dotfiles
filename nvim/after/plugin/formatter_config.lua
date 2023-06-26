@@ -17,6 +17,7 @@ local filetypes = {
 		end
 	},
 	python = ftypes.python.black,
+	ruby = ftypes.ruby.rubocop,
 };
 
 local js = {"javascript", "javascriptreact", "typescript", "typescriptreact", "json", "css", "html"}
