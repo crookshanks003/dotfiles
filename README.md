@@ -16,3 +16,4 @@ These are my i3wm config I use on my arch system. I am still learning my way aro
 ## Screenshots
 ![](https://github.com/crookshanks003/dotfiles/blob/main/screenshots/myRice.png?raw=true)
 ![](https://github.com/crookshanks003/dotfiles/blob/main/screenshots/rofi1.png?raw=true)
+![](https://github.com/crookshanks003/dotfiles/blob/main/screenshots/screen3.png?raw=true)
